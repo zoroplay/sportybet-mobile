@@ -2,7 +2,7 @@
   <div class="c_page-container">
     <div class="c_wrapper">
       <div class="c_login-card">
-        <tabs>
+        <!-- <tabs>
           <tab title="Register">
             <form action="">
               <div class="form-group">
@@ -25,19 +25,19 @@
               <button>Login to your Account</button>
             </form>
           </tab>
-        </tabs>
+        </tabs> -->
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Tab from '~/components/Tab.vue';
-import Tabs from '~/components/Tabs.vue';
+// import Tab from '~/components/Tab.vue';
+// import Tabs from '~/components/Tabs.vue';
 export default {
-  components: { Tab, Tabs },
+  // components: { Tab, Tabs },
   name: "login",
-  layout: "main",
+  // layout: "main",
   data () {
       return {
           isActive: true,

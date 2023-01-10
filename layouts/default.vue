@@ -1,24 +1,18 @@
 <template>
-  <div class="s-page">
-    <div class="header">
-      <page-header>
-        <sports-list></sports-list>
-      </page-header>
-    </div>
+  <div class="page-content page-content--ng">
     <div class="m-main m-layout-main">
-      <nuxt/>
-    </div>
-    <div class="footer">
-      <page-footer></page-footer>
+      <div class="m-main-mid m-has-bottom-nav">
+        <nuxt/>
+        <bottom-nav></bottom-nav>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import PageFooter from '~/components/PageFooter'
-import PageHeader from '~/components/PageHeader'
+import BottomNav from '~/components/BottomNav.vue'
 export default {
-  components: { PageHeader, PageFooter },
+  components: { BottomNav },
 
 }
 </script>
