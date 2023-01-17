@@ -851,8 +851,8 @@ only screen and (min-width: 2560px) {
   font-size: 1.33333333rem;
 }
 
-.m-icon-football:before,
-.m-icon-soccer:before {
+.m-icon-1:before,
+.m-icon-1:before {
   content: '\e67d';
   font-family: "iconfont" !important;
   font-size: 16px;
@@ -861,7 +861,7 @@ only screen and (min-width: 2560px) {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.m-icon-basketball:before {
+.m-icon-2:before {
   content: "\e674";
   font-family: "iconfont" !important;
   font-size: 16px;
@@ -870,7 +870,7 @@ only screen and (min-width: 2560px) {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.m-icon-tennis:before {
+.m-icon-5:before {
   content: "\e680";
   font-family: "iconfont" !important;
   font-size: 16px;
@@ -879,7 +879,7 @@ only screen and (min-width: 2560px) {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.m-icon-rugby:before {
+.m-icon-9:before {
   content: "\e67b";
   font-family: "iconfont" !important;
   font-size: 16px;
@@ -888,7 +888,7 @@ only screen and (min-width: 2560px) {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.m-icon-cricket:before {
+.m-icon-16:before {
   content: "\e673";
   font-family: "iconfont" !important;
   font-size: 16px;
@@ -897,7 +897,7 @@ only screen and (min-width: 2560px) {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.m-icon-volleyball:before {
+.m-icon-23:before {
   content: "\e67f";
   font-family: "iconfont" !important;
   font-size: 16px;
@@ -906,7 +906,7 @@ only screen and (min-width: 2560px) {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.m-icon-iceHockey:before {
+.m-icon-4:before {
   content: "\e67c";
   font-family: "iconfont" !important;
   font-size: 16px;
@@ -915,7 +915,7 @@ only screen and (min-width: 2560px) {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.m-icon-handball:before {
+.m-icon-6:before {
   content: "\e67a";
   font-family: "iconfont" !important;
   font-size: 16px;
@@ -924,7 +924,7 @@ only screen and (min-width: 2560px) {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.m-icon-darts:before {
+.m-icon-22:before {
   content: "\e675";
   font-family: "iconfont" !important;
   font-size: 16px;
@@ -942,7 +942,7 @@ only screen and (min-width: 2560px) {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.m-icon-tableTennis:before {
+.m-icon-20:before {
   content: "\e6b6";
   font-family: "iconfont" !important;
   font-size: 16px;
@@ -960,7 +960,7 @@ only screen and (min-width: 2560px) {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.m-icon-dota:before {
+.m-icon-112:before {
   content: '\e6b9';
   font-family: "iconfont" !important;
   font-size: 16px;
@@ -996,7 +996,7 @@ only screen and (min-width: 2560px) {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.m-icon-baseball:before {
+.m-icon-3:before {
   content: "\e6bc";
   font-family: "iconfont" !important;
   font-size: 16px;
@@ -1005,7 +1005,7 @@ only screen and (min-width: 2560px) {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.m-icon-boxing:before {
+.m-icon-8:before {
   content: "\e6c6";
   font-family: "iconfont" !important;
   font-size: 16px;
@@ -1032,7 +1032,7 @@ only screen and (min-width: 2560px) {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.m-icon-futsal:before {
+.m-icon-29:before {
   content: '\e6c8';
   font-family: "iconfont" !important;
   font-size: 16px;
@@ -1077,7 +1077,7 @@ only screen and (min-width: 2560px) {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.m-icon-snooker:before {
+.m-icon-14:before {
   content: "\e6ca";
   font-family: "iconfont" !important;
   font-size: 16px;
@@ -8663,7 +8663,7 @@ only screen and (min-width: 2560px) {
 }
 
 .m-betslip-header .wrapper-gap.real-theme.is-empty-selection[data-v-2e272c90] {
-  margin-bottom: 0.66666667rem;
+  margin-bottom: 1.66666667rem;
 }
 
 .m-betslip-header .wrapper-gap.sim-theme[data-v-2e272c90] {
@@ -20491,9 +20491,9 @@ body {
   right: 0;
 }
 
-.carousel {
+/* .carousel {
   height: 300px;
-}
+} */
 
 .m-tabs {
   -webkit-box-sizing: border-box;
@@ -21148,7 +21148,7 @@ only screen and (min-width: 360px) and (max-width: 375px) {
   transform-origin: center center;
 }
 
-.HorizonSwipe[data-v-22da39ec] {
+.HorizonSwipe {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -21158,14 +21158,14 @@ only screen and (min-width: 360px) and (max-width: 375px) {
   flex-wrap: nowrap;
 }
 
-.HorizonSwipe>*[data-v-22da39ec] {
+.HorizonSwipe>* {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
-.featuredMatchCategory[data-v-5eff3e49] {
+.featuredMatchCategory {
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -21190,7 +21190,7 @@ only screen and (min-width: 360px) and (max-width: 375px) {
   width: auto;
 }
 
-.featuredMatchCategory[data-v-5eff3e49]::after {
+.featuredMatchCategory::after {
   content: '';
   display: none;
   bottom: 6px;
@@ -21209,7 +21209,7 @@ only screen and (min-width: 360px) and (max-width: 375px) {
   border-top: 8px solid transparent;
 }
 
-.featuredMatchCategory[data-v-5eff3e49]::before {
+.featuredMatchCategory::before {
   content: '';
   display: none;
   bottom: 0px;
@@ -21228,7 +21228,7 @@ only screen and (min-width: 360px) and (max-width: 375px) {
   border-top: 4px solid transparent;
 }
 
-.featuredMatchCategory .wrapper[data-v-5eff3e49] {
+.featuredMatchCategory .wrapper {
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -21240,7 +21240,7 @@ only screen and (min-width: 360px) and (max-width: 375px) {
   height: 1.66666667rem;
 }
 
-.featuredMatchCategory .wrapper .img[data-v-5eff3e49] {
+.featuredMatchCategory .wrapper .img {
   height: 100%;
   -o-object-fit: contain;
   object-fit: contain;
@@ -21248,7 +21248,7 @@ only screen and (min-width: 360px) and (max-width: 375px) {
   width: 1.66666667rem;
 }
 
-.featuredMatchCategory .wrapper .icon[data-v-5eff3e49] {
+.featuredMatchCategory .wrapper .icon {
   line-height: 1.2;
   margin-right: 0.2rem;
   opacity: 0.5;
@@ -21261,7 +21261,7 @@ only screen and (min-width: 360px) and (max-width: 375px) {
 }
 
 @media only screen and (max-width: 320px) {
-  .featuredMatchCategory .wrapper .icon[data-v-5eff3e49] {
+  .featuredMatchCategory .wrapper .icon {
     margin-right: 0;
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -21272,7 +21272,7 @@ only screen and (min-width: 360px) and (max-width: 375px) {
   }
 }
 
-.featuredMatchCategory .wrapper .name[data-v-5eff3e49] {
+.featuredMatchCategory .wrapper .name {
   color: #1B1E25;
   display: none;
   -webkit-box-flex: 0;
@@ -21285,7 +21285,7 @@ only screen and (min-width: 360px) and (max-width: 375px) {
   pointer-events: none;
 }
 
-.featuredMatchCategory.active[data-v-5eff3e49] {
+.featuredMatchCategory.active {
   border-color: #9CA0AB;
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
@@ -21297,26 +21297,26 @@ only screen and (min-width: 360px) and (max-width: 375px) {
   position: relative;
 }
 
-.featuredMatchCategory.active[data-v-5eff3e49]::after {
+.featuredMatchCategory.active::after {
   display: block;
 }
 
-.featuredMatchCategory.active[data-v-5eff3e49]::before {
+.featuredMatchCategory.active::before {
   display: block;
 }
 
-.featuredMatchCategory.active .wrapper[data-v-5eff3e49] {
+.featuredMatchCategory.active .wrapper {
   overflow: hidden;
   white-space: nowrap;
   width: 100%;
 }
 
-.featuredMatchCategory.active .wrapper .img[data-v-5eff3e49],
-.featuredMatchCategory.active .wrapper .icon[data-v-5eff3e49] {
+.featuredMatchCategory.active .wrapper .img,
+.featuredMatchCategory.active .wrapper .icon {
   opacity: 1;
 }
 
-.featuredMatchCategory.active .wrapper .name[data-v-5eff3e49] {
+.featuredMatchCategory.active .wrapper .name {
   display: inline-block;
   opacity: 1;
   pointer-events: auto;
@@ -21780,7 +21780,7 @@ only screen and (min-width: 360px) and (max-width: 375px) {
   }
 }
 
-.featuredMatchCard[data-v-250417be] {
+.featuredMatchCard {
   -webkit-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.1), 2px 2px 4px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.1), 2px 2px 4px 0px rgba(0, 0, 0, 0.1);
   display: -webkit-box;
@@ -22036,15 +22036,15 @@ only screen and (min-width: 360px) and (max-width: 375px) {
   margin-left: 0.33333333rem;
 }
 
-.featuredMatchCard .bottom[data-v-250417be] {
+.featuredMatchCard .bottom {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
 }
 
-.featuredMatch {
-  overflow: hidden;
+.featuredMatch #featuredMatchCardBox {
+  overflow: auto;
 }
 
 .featuredMatch #featuredMatchCardBox {

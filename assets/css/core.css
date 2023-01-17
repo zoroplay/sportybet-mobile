@@ -237,6 +237,13 @@ a, ins {
   }
 }
 
+.event-detail .m-sport-market-no-data {
+  color: #9CA0AB;
+  margin-top: 5%;
+  padding: 2.33333333rem;
+  text-align: center;
+}
+
 @media screen and (min-width:640px) {
   body, button, html, input, select, textarea {
     font-size: 24px

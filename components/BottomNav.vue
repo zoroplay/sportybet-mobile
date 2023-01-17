@@ -1,9 +1,9 @@
 <template>
   <div class="m-bottom-nav">
-    <div class="betslip-float-wrapper real-theme">
+    <div @click="$nuxt.$emit('toggleBetslip')" class="betslip-float-wrapper real-theme">
       <div class="bg"></div>
       <div class="count-wrapper">
-        <span data-op="bet-slip-count" class="count">7</span>
+        <span data-op="bet-slip-count" class="count">{{ betslip.selections.length }}</span>
       </div>
       <div
         class="betslip">
@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="m-bottom-fixed">
-      <div data-op="bottom-nav-home" class="m-btn-button">
+      <div data-op="bottom-nav-home" @click="$router.push('/')" class="m-btn-button">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="22"
@@ -104,7 +104,7 @@
           >Games</span
         >
       </div>
-      <div data-op="bottom-nav-open-bets" class="m-btn-button">
+      <div data-op="bottom-nav-open-bets" @click="$router.push('/account/open_bets')" class="m-btn-button">
         <img
           src="https://s.sporty.net/global/main/modules/common-wap/components/layout/image/open-bet.620ec1f20e.png"
           alt=""
@@ -154,7 +154,10 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: ''
+
+};
 </script>
 
 <style></style>

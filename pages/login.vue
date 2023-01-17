@@ -1,138 +1,159 @@
 <template>
-  <div class="c_page-container">
-    <div class="c_wrapper">
-      <div class="c_login-card">
-        <!-- <tabs>
-          <tab title="Register">
-            <form action="">
-              <div class="form-group">
-                <input type="text">
+  <div id="popupLogin" style="height: 100%">
+    <div class="register-and-login">
+      <div id="loginStep" class="page-container page-fixed">
+        <div class="change-region-wrap">
+          <img
+            src="//s.sporty.net/global/main/modules/common-wap/components/layout/pagelate/footer/image/ngLogo.7bacdd8c1b.png"
+            alt="Nigeria"
+          />
+          <span class="current-country">Nigeria</span>
+          <span
+            class="change-country"
+            data-cms-key="change"
+            data-cms-page="common_functions"
+            >Change</span
+          >
+          <i class="m-icon-right"></i>
+          <span @click="$router.go(-1)" class="close"></span>
+        </div>
+        <div class="login-container">
+          <form style="width: 100%">
+            <div
+              class="verifyInputs m-input-wap-wrapper m-input-wap-group m-input-wap-group--prepend"
+              data-op="login-phone"
+            >
+              <div class="m-input-wap-prepend m-input-wap-prepend--default">
+                <div>+234</div>
               </div>
-              <div class="form-group">
-                <input type="text">
-              </div>
-              <button class="btn btn-dark">Create New Account</button>
-            </form>
-          </tab>
-          <tab title="Login">
-            <form action="">
-              <div class="form-group">
-                <input type="text">
-              </div>
-              <div class="form-group">
-                <input type="text">
-              </div>
-              <button>Login to your Account</button>
-            </form>
-          </tab>
-        </tabs> -->
+              <i
+                class="m-input-wap-icon m-input-wap-icon--clickable m-input-wap-icon--show m-icon-delete"
+              ></i>
+              <input
+                type="tel"
+                v-model="formData.phone_no"
+                placeholder="Mobile Number"
+                maxlength="18"
+                class="m-input-wap fs-exclude data-hj-suppress"
+              />
+            </div>
+            <div data-op="login-phone-err" class="error-message"></div>
+            <div class="verifyInputs m-input-wap-wrapper" data-op="login-pswd">
+              <i class="m-input-wap-text--icon" style="display: none"
+                ><img
+                  src="//s.sporty.net/global/main/modules/common-wap/components/input/img/eye.a86db3dafb.svg"
+              /></i>
+              <i class="m-input-wap-text--icon" style=""
+                ><img
+                  width="20px;"
+                  height="20px"
+                  src="//s.sporty.net/global/main/modules/common-wap/components/input/img/eye-slash.1b289def14.svg"
+              /></i>
+              <input
+                type="password"
+                v-model="formData.password"
+                placeholder="Password"
+                class="m-input-wap fs-exclude data-hj-suppress"
+              />
+            </div>
+            <div data-op="login-pswd-err" class="error-message"></div>
+            <button
+              @click.prevent="loginUser($event)"
+              class="af-button login-btn af-button--primary"
+              :class="loading ? 'is-loading':''"
+            >
+              <span v-if="!loading"> Login </span>
+              <span
+                v-if="loading"
+                ><div class="spinner-border spinner-border-sm" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+                Loading
+              </span
+              >
+            </button>
+          </form>
+          <div class="action-wrap">
+            <div data-op="login-forgot-pswd">
+              <span
+                data-cms-key="forgot_password"
+                data-cms-page="common_functions"
+                >Forgot Password</span
+              >
+              ?
+            </div>
+            <div class="blank-block"></div>
+            <div
+              data-op="login-create-account"
+              data-cms-key="create_new_account"
+              data-cms-page="page_login"
+            >
+              Create New Account
+            </div>
+          </div>
+        </div>
+        <div class="or-area">
+          <div data-cms-key="or" data-cms-page="page_login">Or</div>
+        </div>
+
+        <div class="activate-setting">
+          <span
+            >To deactivate or reactivate your account
+            <span
+              class="action"
+              data-cms-key="click_here"
+              data-cms-page="page_deactivate"
+              >click here</span
+            >.</span
+          >
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-// import Tab from '~/components/Tab.vue';
-// import Tabs from '~/components/Tabs.vue';
 export default {
-  // components: { Tab, Tabs },
   name: "login",
-  // layout: "main",
-  data () {
-      return {
-          isActive: true,
-          tabs: [],
-      }
+  layout: "main",
+  data() {
+    return {
+      formData: {
+        username: "09084780270",
+        password: "password",
+      },
+      showError: false,
+      errorMsg: "",
+      loading: false,
+      showBalance: true,
+    };
   },
-  methods:{
-    selectTab(){
-
-    }
-  },
-  created() {
-    this.tabs = this.$children;
+  methods: {
+    async loginUser() {
+      this.loading = true;
+      await this.$auth
+        .loginWith("local", { data: this.formData })
+        .then(async (res) => {
+          // const data = res.data.data.user
+          // this.$auth.setUser(data)
+          // this.$auth.$storage.setUniversal('user', data, true)
+          this.$router.push("/");
+        })
+        .catch((error) => {
+          $("#loginBtn").text("Login").attr("disabled", false);
+          this.error = true;
+          console.log(error);
+        });
+    },
+    toggleBalance() {
+      this.showBalance = !this.showBalance;
+    },
+    async logout() {
+      await this.$auth.logout();
+      this.$auth.$storage.removeCookie("auth.user", true);
+    },
   },
 };
 </script>
 
-<style>
-.c_page-container {
-  background-color: #e9ecef;
-  height: 100vh;
-}
-
-.c_wrapper {
-  background: url(//s.sporty.net/ng/main/modules/main/desktop/login/image/loginBg.260a4adc08.png)
-    no-repeat left top;
-  background-size: cover;
-  width: 1000px;
-  margin: 0 auto;
-  height: 564px;
-  padding: 63px 0 61px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.c_login-card {
-  width: 462px;
-  background: #fff;
-  /* display: inline-block; */
-  float: right;
-}
-
-.card__tabs ul{
-  display: flex;
-  justify-content: space-between;
-}
-
-.c_login-card .login-card-header{
-  padding: 32px 48px 25px;
-  box-sizing: border-box;
-  border-bottom: 1px solid #EAECEF;
-}
-
-.c_login-card .login-card-body{
-  box-sizing: border-box;
-  padding: 36px 62px 0 62px;
-  text-align: left;
-}
-
-
-.card__tabs ul li{
-  font-size: 24px;
-  color: #000;
-  padding: 0 !important;
-  height: 38px;
-  line-height: 38px;
-}
-
-.c_login-card .login-card-body .form-group input {
-  border: 1px solid #B4B4B4;
-  border-radius: 0px;
-  font-size: 14px;
-  height: 54px;
-  width: 100%;
-  /* padding-left: 18px; */
-}
-
-.c_login-card .login-card-body .form-group:first-child input {
-  border-top: 1px solid #B4B4B4;
-  border-right: 1px solid #B4B4B4;
-  border-left: 1px solid #B4B4B4;
-  border-bottom: 0px;
-}
-
-.c_login-card .login-card-body button{
-  width: 100%;
-  background-color: #0C7C59;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  margin: 20px 0;
-}
-
-.c_login-card .login-card-body {
-  padding-bottom: 30px;
-}
-</style>
+<style></style>

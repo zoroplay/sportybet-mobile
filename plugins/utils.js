@@ -1,5 +1,6 @@
 import Vue from "vue";
 import { mapActions } from 'vuex'
+import _ from 'lodash'
 
 // import store from '../store/index'
 
@@ -42,11 +43,11 @@ Vue.mixin({
           id: 4,
           hoverVisible: false
         },
-        {
-          name: "Bandy",
-          id: 24,
-          hoverVisible: false
-        },
+        // {
+        //   name: "Bandy",
+        //   id: 24,
+        //   hoverVisible: false
+        // },
         {
           name: "Boxing",
           id: 8,
@@ -82,9 +83,14 @@ Vue.mixin({
           id: 14,
           hoverVisible: false
         },
+        // {
+        //   name: "Floorball",
+        //   id: 50,
+        //   hoverVisible: false
+        // },
         {
-          name: "Floorball",
-          id: 50,
+          name: "Dota",
+          id: 112,
           hoverVisible: false
         },
       ],
@@ -190,14 +196,14 @@ Vue.mixin({
             return '6th Set';
         case '7set':
             return '7th Set';
-        case '1q':
-            return '1st Quarter';
-        case '2q':
-            return '2nd Quarter';
-        case '3q':
-            return '3rd Quarter';
-        case '4q':
-            return '4th Quarter';
+        case "1q":
+          return "Q1";
+        case "2q":
+          return "Q2";
+        case "3q":
+          return "Q3";
+        case "4q":
+          return "Q4";
         case 'ot':
             return 'Overtime';
         case '2p_ot':
@@ -227,7 +233,7 @@ Vue.mixin({
       }
     },
     matchTime(time){
-      return time+":00"
+      return time;
     },
     sort: function (arr) {
       // let odds = arr.live_data.markets;
@@ -241,7 +247,10 @@ Vue.mixin({
       return this.sort(fixture.live_data.markets).slice(start, end);
     },
     getActiveMarkets(arr) {
-      return arr.filter((x) => x.active == "1");
+      if(arr){
+        return arr.filter((x) => x.active == "1");
+      }
+      return [];
     },
     getSportsMenu() {
       this.$axios
@@ -257,14 +266,32 @@ Vue.mixin({
       switch (name) {
         case 'Soccer':
           return 1;
-        case 'Soccer':
-          return 1;
+        case 'Tennis':
+          return 5;
         case "Basketball":
           return 2;
         case "Baseball":
           return 3;
         case "Ice Hockey":
           return 4;
+        case "Handball":
+          return 6;
+        case "Rugby":
+          return 9;
+        case 'Boxing':
+          return 8;
+        case 'Cricket':
+          return 16;
+        case "Darts":
+          return 17;
+        case "Futsal":
+          return 25;
+        case "Snooker":
+          return 14;
+        case "Volleyball":
+          return 18;
+        case "MMA":
+          return 21;
         default:
           break;
       }
@@ -319,13 +346,38 @@ Vue.mixin({
       } else {
           return odd;
       }
-    }
+    },
+    getLiveOdds(eventMarkets, market, selection){
+      let odd;
+      if (eventMarkets && eventMarkets.length) {
+          _.each(eventMarkets, function (value, key) {
+              if (value.active === '1' && value.id === market.id && !market.hasSpread) {
+                console.log('true')
+                  _.each(value.odds, function (item, index) {
+                      if (item.active === '1' && item.type === selection.type) {
+                          item.market_id = value.id;
+                          odd = item.odds;
+                      }
+                  });
+              } else if (value.active === '1' && value.type_id === market.id && market.hasSpread) {
+                  _.each(value.odds, function (item, index) {
+                      if (item.active === '1' && item.type === selection.type) {
+                          item.market_id = value.id;
+                          odd = item.odds;
+                      }
+                  });
+              }
+          });
+      }
+
+      return odd;
+    },
+
+
 
 
   },
-  mounted() {
-    // this.getSportsMenu()
-  },
+
 
   //gameplay
 });

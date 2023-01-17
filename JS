@@ -1,0 +1,797 @@
+      <div class="m-live-upcoming">
+        <h3 class="m-title" data-cms-key="upcoming_live" data-cms-page="live">
+          Upcoming Live
+        </h3>
+        <div
+          class="m-snap-nav-wrap m-mkt-type"
+          style="overflow: hidden; top: 83px"
+        >
+          <ul
+            class="m-snap-nav flex"
+            style="
+              transform: translate(0px, 0px) translateZ(0px);
+              transition-duration: 350ms;
+              transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+              width: 676.523px;
+            "
+          >
+            <li class="m-sport-type-item m-snap-nav-item active">1X2</li>
+            <li class="m-sport-type-item m-snap-nav-item">Over/Under</li>
+            <li class="m-sport-type-item m-snap-nav-item">Double Chance</li>
+            <li class="m-sport-type-item m-snap-nav-item">Handicap</li>
+            <li class="m-sport-type-item m-snap-nav-item">GG/NG</li>
+            <li class="m-sport-type-item m-snap-nav-item">1st Half - 1X2</li>
+            <li class="m-sport-type-item m-snap-nav-item">2nd half - 1X2</li>
+            <li class="m-sport-type-item m-snap-nav-item">DNB</li>
+          </ul>
+          <i class="controls left-controls"></i>
+          <i class="controls right-controls"></i>
+        </div>
+        <div class="m-table m-sports-table football">
+          <div class="m-table-row m-date-row">
+            <div class="m-table-cell m-date">14/01 Saturday</div>
+            <div class="m-table-cell market-title">
+              <div>1</div>
+              <div>X</div>
+              <div>2</div>
+            </div>
+          </div>
+          <div data-op="label-prematch" class="m-event-sport m-sports-row">
+            <div class="m-event-meta">
+              <!---->
+              <span class="m-time">15:30</span>
+              <span class="m-game-id">ID 31289</span>
+              <span class="m-league-name"
+                >International Clubs - Club Friendly Games</span
+              >
+            </div>
+            <div class="m-table-row m-sports-table">
+              <div class="m-table-cell m-info-cell">
+                <div class="team">Schalke</div>
+                <div class="team">Werder Bremen</div>
+              </div>
+              <div class="m-table-cell m-market-cell">
+                <div class="m-market m-event-market-default market-id-1">
+                  <!---->
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >2.90</span
+                    >
+                  </div>
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >3.80</span
+                    >
+                  </div>
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >2.15</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="m-event-footer">
+              <div class="m-market-size">
+                +127
+                <!---->
+                <!---->
+                <!---->
+              </div>
+              <!---->
+            </div>
+          </div>
+          <!---->
+          <div data-op="label-prematch" class="m-event-sport m-sports-row">
+            <div class="m-event-meta">
+              <!---->
+              <span class="m-time">15:30</span>
+              <span class="m-game-id">ID 30946</span>
+              <span class="m-league-name"
+                >Spain Amateur - Tercera Federacion, Group 15</span
+              >
+            </div>
+            <div class="m-table-row m-sports-table">
+              <div class="m-table-cell m-info-cell">
+                <div class="team">CD Cortes Navarre</div>
+                <div class="team">CD Huarte</div>
+              </div>
+              <div class="m-table-cell m-market-cell">
+                <div class="m-market m-event-market-default market-id-1">
+                  <!---->
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >2.70</span
+                    >
+                  </div>
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >2.95</span
+                    >
+                  </div>
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >2.55</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="m-event-footer">
+              <div class="m-market-size">
+                +19
+                <!---->
+                <!---->
+                <!---->
+              </div>
+              <!---->
+            </div>
+          </div>
+          <!---->
+          <div data-op="label-prematch" class="m-event-sport m-sports-row">
+            <div class="m-event-meta">
+              <div data-v-33c087e8="" class="label-container event-labels">
+                <img
+                  data-v-33c087e8=""
+                  src="//s.sporty.net/global/main/modules/main/mobile/common/components/event/image/label_hot.016bf8bac3.png"
+                  data-op=""
+                  width="58"
+                  height="15"
+                /><img
+                  data-v-33c087e8=""
+                  src="//s.sporty.net/global/main/modules/main/mobile/common/components/event/image/label_bestodds.6849c8c853.png"
+                  data-op=""
+                  width="80"
+                  height="15"
+                />
+              </div>
+              <span class="m-time">16:00</span>
+              <span class="m-game-id">ID 24939</span>
+              <span class="m-league-name">England - Premier League</span>
+            </div>
+            <div class="m-table-row m-sports-table">
+              <div class="m-table-cell m-info-cell">
+                <div class="team">Brighton</div>
+                <div class="team">Liverpool</div>
+              </div>
+              <div class="m-table-cell m-market-cell">
+                <div class="m-market m-event-market-default market-id-1">
+                  <!---->
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >2.97</span
+                    >
+                  </div>
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >3.81</span
+                    >
+                  </div>
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >2.37</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="m-event-footer">
+              <div class="m-market-size">
+                +311
+                <img
+                  src="//s.sporty.net/global/main/brand/sportybet/mobile/images/stv.b89a6457ad.png"
+                  width="18"
+                  height="18"
+                  class="media-icon stv-icon"
+                />
+                <img
+                  src="//s.sporty.net/global/main/brand/sportybet/mobile/images/sfm.995a451718.png"
+                  width="18"
+                  height="18"
+                  class="media-icon sfm-icon"
+                />
+                <!---->
+              </div>
+              <div class="m-event-comment">Comments 22</div>
+            </div>
+          </div>
+          <!---->
+          <div data-op="label-prematch" class="m-event-sport m-sports-row">
+            <div class="m-event-meta">
+              <div data-v-33c087e8="" class="label-container event-labels">
+                <img
+                  data-v-33c087e8=""
+                  src="//s.sporty.net/global/main/modules/main/mobile/common/components/event/image/label_hot.016bf8bac3.png"
+                  data-op=""
+                  width="58"
+                  height="15"
+                /><img
+                  data-v-33c087e8=""
+                  src="//s.sporty.net/global/main/modules/main/mobile/common/components/event/image/label_bestodds.6849c8c853.png"
+                  data-op=""
+                  width="80"
+                  height="15"
+                />
+              </div>
+              <span class="m-time">16:00</span>
+              <span class="m-game-id">ID 24945</span>
+              <span class="m-league-name">England - Premier League</span>
+            </div>
+            <div class="m-table-row m-sports-table">
+              <div class="m-table-cell m-info-cell">
+                <div class="team">Everton</div>
+                <div class="team">Southampton</div>
+              </div>
+              <div class="m-table-cell m-market-cell">
+                <div class="m-market m-event-market-default market-id-1">
+                  <!---->
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >2.46</span
+                    >
+                  </div>
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >3.31</span
+                    >
+                  </div>
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >3.21</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="m-event-footer">
+              <div class="m-market-size">
+                +303
+                <!---->
+                <img
+                  src="//s.sporty.net/global/main/brand/sportybet/mobile/images/sfm.995a451718.png"
+                  width="18"
+                  height="18"
+                  class="media-icon sfm-icon"
+                />
+                <!---->
+              </div>
+              <div class="m-event-comment">Comments 19</div>
+            </div>
+          </div>
+          <!---->
+          <div data-op="label-prematch" class="m-event-sport m-sports-row">
+            <div class="m-event-meta">
+              <div data-v-33c087e8="" class="label-container event-labels">
+                <img
+                  data-v-33c087e8=""
+                  src="//s.sporty.net/global/main/modules/main/mobile/common/components/event/image/label_hot.016bf8bac3.png"
+                  data-op=""
+                  width="58"
+                  height="15"
+                /><img
+                  data-v-33c087e8=""
+                  src="//s.sporty.net/global/main/modules/main/mobile/common/components/event/image/label_bestodds.6849c8c853.png"
+                  data-op=""
+                  width="80"
+                  height="15"
+                />
+              </div>
+              <span class="m-time">16:00</span>
+              <span class="m-game-id">ID 24940</span>
+              <span class="m-league-name">England - Premier League</span>
+            </div>
+            <div class="m-table-row m-sports-table">
+              <div class="m-table-cell m-info-cell">
+                <div class="team">Nottingham Forest</div>
+                <div class="team">Leicester</div>
+              </div>
+              <div class="m-table-cell m-market-cell">
+                <div class="m-market m-event-market-default market-id-1">
+                  <!---->
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >2.74</span
+                    >
+                  </div>
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >3.23</span
+                    >
+                  </div>
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >2.90</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="m-event-footer">
+              <div class="m-market-size">
+                +290
+                <!---->
+                <img
+                  src="//s.sporty.net/global/main/brand/sportybet/mobile/images/sfm.995a451718.png"
+                  width="18"
+                  height="18"
+                  class="media-icon sfm-icon"
+                />
+                <!---->
+              </div>
+              <div class="m-event-comment">Comments 16</div>
+            </div>
+          </div>
+          <!---->
+          <div data-op="label-prematch" class="m-event-sport m-sports-row">
+            <div class="m-event-meta">
+              <div data-v-33c087e8="" class="label-container event-labels">
+                <img
+                  data-v-33c087e8=""
+                  src="//s.sporty.net/global/main/modules/main/mobile/common/components/event/image/label_bestodds.6849c8c853.png"
+                  data-op=""
+                  width="80"
+                  height="15"
+                />
+              </div>
+              <span class="m-time">16:00</span>
+              <span class="m-game-id">ID 24950</span>
+              <span class="m-league-name">England - Premier League</span>
+            </div>
+            <div class="m-table-row m-sports-table">
+              <div class="m-table-cell m-info-cell">
+                <div class="team">Wolverhampton</div>
+                <div class="team">West Ham</div>
+              </div>
+              <div class="m-table-cell m-market-cell">
+                <div class="m-market m-event-market-default market-id-1">
+                  <!---->
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >2.59</span
+                    >
+                  </div>
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >3.24</span
+                    >
+                  </div>
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >3.07</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="m-event-footer">
+              <div class="m-market-size">
+                +289
+                <!---->
+                <img
+                  src="//s.sporty.net/global/main/brand/sportybet/mobile/images/sfm.995a451718.png"
+                  width="18"
+                  height="18"
+                  class="media-icon sfm-icon"
+                />
+                <!---->
+              </div>
+              <div class="m-event-comment">Comments 13</div>
+            </div>
+          </div>
+          <!---->
+          <div data-op="label-prematch" class="m-event-sport m-sports-row">
+            <div class="m-event-meta">
+              <!---->
+              <span class="m-time">16:00</span>
+              <span class="m-game-id">ID 11647</span>
+              <span class="m-league-name">Nigeria - NPFL</span>
+            </div>
+            <div class="m-table-row m-sports-table">
+              <div class="m-table-cell m-info-cell">
+                <div class="team">Nasarawa United</div>
+                <div class="team">Enyimba</div>
+              </div>
+              <div class="m-table-cell m-market-cell">
+                <div class="m-market m-event-market-default market-id-1">
+                  <!---->
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >1.48</span
+                    >
+                  </div>
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >3.40</span
+                    >
+                  </div>
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >6.20</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="m-event-footer">
+              <div class="m-market-size">
+                +8
+                <!---->
+                <!---->
+                <!---->
+              </div>
+              <!---->
+            </div>
+          </div>
+          <!---->
+          <div data-op="label-prematch" class="m-event-sport m-sports-row">
+            <div class="m-event-meta">
+              <!---->
+              <span class="m-time">16:00</span>
+              <span class="m-game-id">ID 23229</span>
+              <span class="m-league-name">England - Championship</span>
+            </div>
+            <div class="m-table-row m-sports-table">
+              <div class="m-table-cell m-info-cell">
+                <div class="team">Bristol City</div>
+                <div class="team">Birmingham City</div>
+              </div>
+              <div class="m-table-cell m-market-cell">
+                <div class="m-market m-event-market-default market-id-1">
+                  <!---->
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >2.15</span
+                    >
+                  </div>
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >3.30</span
+                    >
+                  </div>
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >3.50</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="m-event-footer">
+              <div class="m-market-size">
+                +171
+                <!---->
+                <!---->
+                <!---->
+              </div>
+              <!---->
+            </div>
+          </div>
+          <!---->
+          <div data-op="label-prematch" class="m-event-sport m-sports-row">
+            <div class="m-event-meta">
+              <!---->
+              <span class="m-time">16:00</span>
+              <span class="m-game-id">ID 23230</span>
+              <span class="m-league-name">England - Championship</span>
+            </div>
+            <div class="m-table-row m-sports-table">
+              <div class="m-table-cell m-info-cell">
+                <div class="team">Burnley</div>
+                <div class="team">Coventry City</div>
+              </div>
+              <div class="m-table-cell m-market-cell">
+                <div class="m-market m-event-market-default market-id-1">
+                  <!---->
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >1.60</span
+                    >
+                  </div>
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >4.00</span
+                    >
+                  </div>
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >5.60</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="m-event-footer">
+              <div class="m-market-size">
+                +173
+                <!---->
+                <!---->
+                <!---->
+              </div>
+              <!---->
+            </div>
+          </div>
+          <!---->
+          <div data-op="label-prematch" class="m-event-sport m-sports-row">
+            <div class="m-event-meta">
+              <!---->
+              <span class="m-time">16:00</span>
+              <span class="m-game-id">ID 23231</span>
+              <span class="m-league-name">England - Championship</span>
+            </div>
+            <div class="m-table-row m-sports-table">
+              <div class="m-table-cell m-info-cell">
+                <div class="team">Cardiff</div>
+                <div class="team">Wigan Athletic</div>
+              </div>
+              <div class="m-table-cell m-market-cell">
+                <div class="m-market m-event-market-default market-id-1">
+                  <!---->
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >2.10</span
+                    >
+                  </div>
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >3.30</span
+                    >
+                  </div>
+                  <div
+                    class="m-outcome m-event-outcome-default"
+                    data-op="label-odds"
+                  >
+                    <!---->
+                    <span data-op="label-odds-amount" class="m-outcome-odds"
+                      >3.70</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="m-event-footer">
+              <div class="m-market-size">
+                +171
+                <!---->
+                <!---->
+                <!---->
+              </div>
+              <!---->
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div data-v-06ecd06c="" class="m-list" style="display: none; min-height: 850.297px;">
+              <div data-v-06ecd06c="" class="m-regions">
+                <div data-v-06ecd06c="" class="m-regions-list">
+                  <div data-v-06ecd06c="" class="m-scroll-wrap">
+                    <ul data-v-06ecd06c="" class="m-category">
+                      <li data-v-06ecd06c="" data-id="sr:category:top" class="tournament"><span data-v-06ecd06c=""
+                          class="category-name">Top Leagues</span><span data-v-06ecd06c=""
+                          class="select-tournamet-size">
+                          <!---->
+                        </span><span data-v-06ecd06c="" class="event-size">9</span></li>
+                      <li data-v-06ecd06c="" data-id="sr:category:1" class="tournament"><span data-v-06ecd06c=""
+                          class="category-name">England</span><span data-v-06ecd06c="" class="select-tournamet-size">
+                          <!---->
+                        </span><span data-v-06ecd06c="" class="event-size">2</span></li>
+                      <li data-v-06ecd06c="" data-id="sr:category:31" class="tournament"><span data-v-06ecd06c=""
+                          class="category-name">Italy</span><span data-v-06ecd06c="" class="select-tournamet-size">
+                          <!---->
+                        </span><span data-v-06ecd06c="" class="event-size">3</span></li>
+                      <li data-v-06ecd06c="" data-id="sr:category:32" class="tournament"><span data-v-06ecd06c=""
+                          class="category-name">Spain</span><span data-v-06ecd06c="" class="select-tournamet-size">
+                          <!---->
+                        </span><span data-v-06ecd06c="" class="event-size">4</span></li>
+                      <li data-v-06ecd06c="" data-id="sr:category:4" class="tournament"><span data-v-06ecd06c=""
+                          class="category-name">International</span><span data-v-06ecd06c=""
+                          class="select-tournamet-size">
+                          <!---->
+                        </span><span data-v-06ecd06c="" class="event-size">2</span></li>
+                      <li data-v-06ecd06c="" data-id="sr:category:34" class="tournament"><span data-v-06ecd06c=""
+                          class="category-name">Australia</span><span data-v-06ecd06c="" class="select-tournamet-size">
+                          <!---->
+                        </span><span data-v-06ecd06c="" class="event-size">1</span></li>
+                      <li data-v-06ecd06c="" data-id="sr:category:33" class="tournament"><span data-v-06ecd06c=""
+                          class="category-name">Belgium</span><span data-v-06ecd06c="" class="select-tournamet-size">
+                          <!---->
+                        </span><span data-v-06ecd06c="" class="event-size">4</span></li>
+                      <li data-v-06ecd06c="" data-id="sr:category:13" class="tournament"><span data-v-06ecd06c=""
+                          class="category-name">Brazil</span><span data-v-06ecd06c="" class="select-tournamet-size">
+                          <!---->
+                        </span><span data-v-06ecd06c="" class="event-size">5</span></li>
+                      <li data-v-06ecd06c="" data-id="sr:category:14" class="tournament"><span data-v-06ecd06c=""
+                          class="category-name">Croatia</span><span data-v-06ecd06c="" class="select-tournamet-size">
+                          <!---->
+                        </span><span data-v-06ecd06c="" class="event-size">1</span></li>
+                      <li data-v-06ecd06c="" data-id="sr:category:102" class="tournament"><span data-v-06ecd06c=""
+                          class="category-name">Cyprus</span><span data-v-06ecd06c="" class="select-tournamet-size">
+                          <!---->
+                        </span><span data-v-06ecd06c="" class="event-size">1</span></li>
+                      <li data-v-06ecd06c="" data-id="sr:category:305" class="tournament"><span data-v-06ecd06c=""
+                          class="category-name">Egypt</span><span data-v-06ecd06c="" class="select-tournamet-size">
+                          <!---->
+                        </span><span data-v-06ecd06c="" class="event-size">2</span></li>
+                      <li data-v-06ecd06c="" data-id="sr:category:1" class="tournament"><span data-v-06ecd06c=""
+                          class="category-name">England</span><span data-v-06ecd06c="" class="select-tournamet-size">
+                          <!---->
+                        </span><span data-v-06ecd06c="" class="event-size">2</span></li>
+                      <li data-v-06ecd06c="" data-id="sr:category:252" class="tournament"><span data-v-06ecd06c=""
+                          class="category-name">England Amateur</span><span data-v-06ecd06c=""
+                          class="select-tournamet-size">
+                          <!---->
+                        </span><span data-v-06ecd06c="" class="event-size">1</span></li>
+                      <li data-v-06ecd06c="" data-id="sr:category:67" class="tournament"><span data-v-06ecd06c=""
+                          class="category-name">Greece</span><span data-v-06ecd06c="" class="select-tournamet-size">
+                          <!---->
+                        </span><span data-v-06ecd06c="" class="event-size">4</span></li>
+                      <li data-v-06ecd06c="" data-id="sr:category:352" class="tournament"><span data-v-06ecd06c=""
+                          class="category-name">India</span><span data-v-06ecd06c="" class="select-tournamet-size">
+                          <!---->
+                        </span><span data-v-06ecd06c="" class="event-size">2</span></li>
+                      <li data-v-06ecd06c="" data-id="sr:category:4" class="tournament"><span data-v-06ecd06c=""
+                          class="category-name">International</span><span data-v-06ecd06c=""
+                          class="select-tournamet-size">
+                          <!---->
+                        </span><span data-v-06ecd06c="" class="event-size">2</span></li>
+                      <li data-v-06ecd06c="" data-id="sr:category:31" class="tournament"><span data-v-06ecd06c=""
+                          class="category-name">Italy</span><span data-v-06ecd06c="" class="select-tournamet-size">
+                          <!---->
+                        </span><span data-v-06ecd06c="" class="event-size">3</span></li>
+                      <li data-v-06ecd06c="" data-id="sr:category:12" class="tournament"><span data-v-06ecd06c=""
+                          class="category-name">Mexico</span><span data-v-06ecd06c="" class="select-tournamet-size">
+                          <!---->
+                        </span><span data-v-06ecd06c="" class="event-size">3</span></li>
+                      <li data-v-06ecd06c="" data-id="sr:category:22" class="tournament"><span data-v-06ecd06c=""
+                          class="category-name">Scotland</span><span data-v-06ecd06c="" class="select-tournamet-size">
+                          <!---->
+                        </span><span data-v-06ecd06c="" class="event-size">4</span></li>
+                      <li data-v-06ecd06c="" data-id="sr:category:32" class="tournament"><span data-v-06ecd06c=""
+                          class="category-name">Spain</span><span data-v-06ecd06c="" class="select-tournamet-size">
+                          <!---->
+                        </span><span data-v-06ecd06c="" class="event-size">4</span></li>
+                      <li data-v-06ecd06c="" data-id="sr:category:46" class="tournament"><span data-v-06ecd06c=""
+                          class="category-name">Turkiye</span><span data-v-06ecd06c="" class="select-tournamet-size">
+                          <!---->
+                        </span><span data-v-06ecd06c="" class="event-size">3</span></li>
+                    </ul>
+                  </div>
+                  <div data-v-06ecd06c="" class="m-scroll-wrap">
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div data-v-06ecd06c="" class="m-regions-opt"><span data-v-06ecd06c="" class="m-regions-reset"
+                  data-cms-key="reset" data-cms-page="common_functions">Reset</span><span data-v-06ecd06c=""
+                  class="m-regions-apply" data-cms-key="apply" data-cms-page="common_functions">Apply</span></div>
+              <!---->
+            </div>
