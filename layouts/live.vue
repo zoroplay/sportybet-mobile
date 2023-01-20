@@ -4,7 +4,7 @@
       <div class="m-main m-layout-main">
         <div class="m-main-mid m-has-bottom-nav">
           <nuxt/>
-          <!-- <bottom-nav></bottom-nav> -->
+          <bottom-nav :show="show"></bottom-nav>
           <Footer />
         </div>
       </div>
@@ -17,6 +17,11 @@ import BottomNav from '~/components/BottomNav.vue'
 import Footer from '~/components/Footer.vue'
 export default {
   components: { BottomNav, Footer },
+  data(){
+    return {
+      show: false
+    }
+  }
 
 }
 </script>

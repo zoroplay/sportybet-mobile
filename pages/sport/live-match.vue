@@ -109,11 +109,11 @@
         <div class="m-sport-market">
           <div v-for="(i, o) in details.live_data?.markets" :key="o" class="m-market m-detail-market-default" :market="i.name">
             <div v-if="i.active == '1'" data-v-f74cd45a="" class="m-market-title">
-              <span data-v-f74cd45a="" class="dis-icon"></span>
+              <!-- <span data-v-f74cd45a="" class="dis-icon"></span> -->
               <span data-v-f74cd45a="" class="text">{{ i.name }} <span v-if="i.type_id == '5'"
                 >O/U {{ i.specialOddsValue }}</span
               ></span>
-              <span data-v-f74cd45a="" class="m-icon-tips"></span>
+              <!-- <span data-v-f74cd45a="" class="m-icon-tips"></span> -->
               <!---->
               <span data-v-f74cd45a="" class="market-right-wrap"><span data-v-f74cd45a=""
                   class="market-favor market-favor-disable"></span></span>
@@ -142,7 +142,6 @@
         </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 

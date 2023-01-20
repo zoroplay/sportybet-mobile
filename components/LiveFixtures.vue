@@ -9,7 +9,7 @@
         </div>
       </div>
     </div>
-    <div v-for="(group, index) in data.Events" :key="index" class="m-league">
+    <div class="m-league">
       <div class="m-league-title">
         <span class="icon-triangle"></span>
         <span class="text">{{ data.category }} - {{ data.Name }}</span>
@@ -48,6 +48,9 @@
                     :key="index"
                     :active="o.active"
                     :odds="getLiveOdds(event.live_data?.markets, markets, o)"
+                    :outcome="o"
+                    :fixture="event"
+                    :markets="markets"
                   ></live-odds>
                 </div>
               </div>

@@ -24,33 +24,16 @@
               :key="index"
               :active="o.active"
               :odds="getLiveOdds(game.live_data?.markets, markets, o)"
+              :outcome="o"
+              :fixture="game"
+              :markets="markets"
             ></live-odds>
-            <!-- <div class="m-outcome m-event-outcome-default" data-op="label-odds">
-              <span data-op="label-odds-amount" class="m-outcome-odds"
-                >19.00</span
-              >
-            </div>
-            <div class="m-outcome m-event-outcome-default" data-op="label-odds">
-              <span data-op="label-odds-amount" class="m-outcome-odds"
-                >19.00</span
-              >
-            </div>
-            <div class="m-outcome m-event-outcome-default" data-op="label-odds">
-              <span data-op="label-odds-amount" class="m-outcome-odds">1.01</span>
-            </div> -->
           </div>
         </div>
       </div>
       <div class="m-event-footer">
         <div class="m-market-size">
           +187&gt;
-          <img
-            src="https://s.sporty.net/global/main/brand/sportybet/mobile/images/stv.b89a6457ad.png"
-            width="18"
-            height="18"
-            data-op="label-stv-tag"
-            class="media-icon stv-icon"
-          />
         </div>
       </div>
     </div>

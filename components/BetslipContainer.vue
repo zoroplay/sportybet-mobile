@@ -186,7 +186,7 @@
                               </div>
                             </div>
                             <div data-v-024cbf23="" class="m-vs-wrapper">
-                              <i data-v-024cbf23="" class="m-icon-live"
+                              <i data-v-024cbf23="" class="m-icon-live d-none"
                                 ><span data-v-024cbf23="">Live </span></i
                               >
                               <div data-v-024cbf23="">{{ bet.event_name }}</div>

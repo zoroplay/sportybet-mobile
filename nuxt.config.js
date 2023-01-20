@@ -81,7 +81,7 @@ export default {
         name: "sport-name-live-eventid",
         path: "/sport/:name/live/:eventid",
         components: {
-          default: resolve(__dirname, "pages/sport/match"), // or routes[index].component
+          default: resolve(__dirname, "pages/sport/live-match"), // or routes[index].component
           layout: resolve(__dirname, "layouts/live.vue"),
         },
         chunkNames: {

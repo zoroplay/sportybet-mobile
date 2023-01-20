@@ -10,7 +10,7 @@
         BETSLIP
       </div>
     </div>
-    <div class="m-bottom-fixed">
+    <div class="m-bottom-fixed" :class="show ? '':'d-none'">
       <div data-op="bottom-nav-home" @click="$router.push('/')" class="m-btn-button">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -155,7 +155,8 @@
 
 <script>
 export default {
-  name: ''
+  name: 'bottom-nav',
+  props:["show"]
 
 };
 </script>

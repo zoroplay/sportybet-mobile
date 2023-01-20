@@ -36,7 +36,7 @@
               :key="index"
               @click.prevent="setActiveSport(sport.Id)"
               class="m-sport-type-item m-snap-nav-item"
-              :class="index === 0 ? 'active' : ''"
+              :class="sport.Id === active_sport ? 'active' : ''"
               :id="'live_'+sport.Id"
             >
               <span class="m-event-size">{{ sport.EventCount }}</span>
