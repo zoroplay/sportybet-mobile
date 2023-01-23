@@ -31,7 +31,7 @@
               ></i>
               <input
                 type="tel"
-                v-model="formData.phone_no"
+                v-model="formData.username"
                 placeholder="Mobile Number"
                 maxlength="18"
                 class="m-input-wap fs-exclude data-hj-suppress"
@@ -119,7 +119,7 @@ export default {
   data() {
     return {
       formData: {
-        username: "09084780270",
+        username: "8037768166",
         password: "password",
       },
       showError: false,

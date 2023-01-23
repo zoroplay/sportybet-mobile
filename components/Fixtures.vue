@@ -29,7 +29,7 @@
             >
           </div>
           <div class="m-table-row m-sports-table">
-            <div class="m-table-cell m-info-cell">
+            <div class="m-table-cell m-info-cell" @click="$router.push({name:'sport-name-pre-eventid',params:{name:event.sport_name.toLowerCase(),eventid:event.provider_id} })">
               <div class="team">{{ event.team_a }}</div>
               <div class="team">{{ event.team_b }}</div>
             </div>

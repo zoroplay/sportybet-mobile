@@ -32,6 +32,7 @@ export default {
     "~/assets/css/core.css",
     "~/assets/css/style.css",
     "bootstrap-vue/dist/bootstrap-vue.css",
+    "~/assets/css/bootstrap-side-modals.css",
     "bootstrap/dist/css/bootstrap.css",
     "bootstrap-icons/font/bootstrap-icons.css",
     "~/assets/icofont/icofont.min.css",
@@ -86,6 +87,16 @@ export default {
         },
         chunkNames: {
           layout: "layouts/live",
+        },
+      },{
+        name: "sport-name-pre-eventid",
+        path: "/sport/:name/prematch/:eventid",
+        components: {
+          default: resolve(__dirname, "pages/sport/pre-match"), // or routes[index].component
+          layout: resolve(__dirname, "layouts/default.vue"),
+        },
+        chunkNames: {
+          layout: "layouts/default",
         },
       });
     },

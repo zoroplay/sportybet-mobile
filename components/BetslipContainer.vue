@@ -167,9 +167,7 @@
                       <div data-v-024cbf23="" class="m-outcomes-row m-team-row">
                         <div data-v-024cbf23="" class="m-team-cell">
                           <a
-                            data-v-024cbf23=""
-                            href="/ng/m/sport/football/sr:category:803/sr:tournament:2436/sr:match:35238315"
-                            class=""
+                            @click="$router.push({name:'sport-name-'+bet.type+'-eventid',params:{name:bet.sport,eventid:bet.provider_id} })"
                           >
                             <div
                               data-v-024cbf23=""
@@ -179,7 +177,7 @@
                                 data-v-024cbf23=""
                                 class="m-icon-football m-outcome-desc"
                               >
-                                Home
+                                {{ bet.oddname == '1' ? 'Home' : bet.oddname == '2' ? 'Away' : bet.oddname == 'X' ? 'Away' : bet.oddname  }}
                               </div>
                               <div data-v-024cbf23="" class="m-outcome-odds">
                                 {{ bet.odds }}
@@ -271,13 +269,14 @@
                   >
                     Book Bet
                   </div>
-                  <div class="place-bet real-theme">
+                  <div @click="placeBet($event)" class="place-bet real-theme" :class="betslip.totalStake >= 10 ? '':'bet-disabled sim-disabled'">
                     <span data-op="betslip-placebet">Place Bet</span>
                     <div class="m-pay-num">
                       <span
+                        v-if="betslip.totalStake >= 10"
                         data-cms-key="about_to_pay_vamount"
                         data-cms-page="component_betslip"
-                        >About to pay 100.00</span
+                        >About to pay {{ betslip.totalStake }}</span
                       >
                     </div>
                   </div>
@@ -348,6 +347,9 @@ export default {
         this.$nuxt.$emit("toggleBetslip");
       }
     },
+    placeBet(e){
+      this.$store.dispatch('coupon/placeBet', e,"bet", null)
+    }
   },
 };
 </script>

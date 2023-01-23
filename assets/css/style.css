@@ -1,11 +1,11 @@
 @import url(//fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap&subset=latin,latin-ext);
 
 
-@font-face {
+/* @font-face {
   font-family: "AvenirNext";
   src: local("AvenirNext"),
     url('/fonts/AvenirNextLTPro-Regular.otf') format("truetype");
-}
+} */
 
 html, h1, h2, h3, h4, h5, h6, p, span, div {
   font-family: 'AvenirNext', sans-serif;

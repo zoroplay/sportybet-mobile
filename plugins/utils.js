@@ -301,7 +301,7 @@ Vue.mixin({
 
       if (coupon.selections.length > 0) {
         let count = coupon.selections.find(
-          selection => selection.element_id === ele_id
+          selection => selection.element_id == ele_id
         );
         if (count) {
           isExist = true;
@@ -311,6 +311,7 @@ Vue.mixin({
     },
     createID(event_id, market_id, odd_name, odd_id) {
       let oddname = String(odd_name).replace(/[^a-zA-Z0-9]/g, "_");
+      // console.log(event_id + "_" + market_id + "_" + oddname + "_" + odd_id)
       return event_id + "_" + market_id + "_" + oddname + "_" + odd_id;
     },
     toURL(name) {
@@ -372,6 +373,10 @@ Vue.mixin({
 
       return odd;
     },
+
+    getMatchStatus(selection){
+      // if(selection)
+    }
 
 
 

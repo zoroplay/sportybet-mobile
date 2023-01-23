@@ -3,7 +3,7 @@
     <div class="m-main m-layout-main">
       <div class="m-main-mid m-has-bottom-nav">
         <nuxt/>
-        <bottom-nav></bottom-nav>
+        <bottom-nav :show="true"></bottom-nav>
       </div>
       <betslip-container :show_betslip="show_betslip"></betslip-container>
     </div>

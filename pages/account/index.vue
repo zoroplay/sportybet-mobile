@@ -16,7 +16,7 @@
                   class="account text-white"
 
                 >
-                  Login to View
+                  Login to View <span @click="logout">logout</span>
                 </div>
               </router-link>
               <i data-v-306414ab="" class="m-icon-arrow1"></i>
@@ -239,6 +239,12 @@ import Footer from "~/components/Footer.vue";
 export default {
   name: "me",
   components: { Footer },
+  methods:{
+    async logout() {
+        await this.$auth.logout();
+        this.$auth.$storage.removeCookie('auth.user',true)
+    },
+  }
 };
 </script>
 
