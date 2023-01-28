@@ -83,9 +83,9 @@ export default {
     },
   },
   methods: {
-    getLive() {
+    async getLive() {
       this.loading = true
-      this.$axios.get("sports/live").then((res) => {
+      await this.$axios.get("sports/live").then((res) => {
         let groupedBySport = this.groupLiveSports(res.data.data.fixtures);
         let sports = res.data.data.sports;
         if (sports.length > 0) {

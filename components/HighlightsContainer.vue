@@ -132,7 +132,7 @@
           style=""
         >
           <div class="m-highlights-wrap" style="position: relative">
-            <div class="m-bet-content">
+            <div v-if="Object.keys(highlights).length" class="m-bet-content">
               <div
                 v-for="(group, index) in highlights"
                 :key="index"
@@ -241,6 +241,7 @@
                 </a>
               </div>
             </div>
+            <div v-else class="m-loading-wrap"><div class="m-loading dark"><div class="loading"></div> <!----></div></div>
             <!---->
           </div>
         </div>
@@ -252,7 +253,7 @@
           tabindex="0"
         >
           <div style="position: relative">
-            <div v-if="today" class="m-bet-content">
+            <div v-if="Object.keys(today).length" class="m-bet-content">
               <div
                 v-for="(group, index) in today"
                 :key="index"

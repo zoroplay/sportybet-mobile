@@ -9,7 +9,7 @@
         <div class="live-marker">Live</div>
       </div>
       <div class="m-table-row m-live-table">
-        <div class="m-table-cell m-info-cell">
+        <div class="m-table-cell m-info-cell" @click="$router.push({name:'sport-name-live-eventid',params:{name:game.sport_name,eventid:game.provider_id} })">
           <div class="team">{{ game.team_a }}</div>
           <div class="team">{{ game.team_b }}</div>
         </div>

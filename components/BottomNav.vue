@@ -116,7 +116,7 @@
           >Open Bets</span
         >
       </div>
-      <div data-op="bottom-me" class="m-btn-button">
+      <div data-op="bottom-me" @click="$router.push('/account')" class="m-btn-button">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="22"

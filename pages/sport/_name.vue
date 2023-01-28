@@ -42,16 +42,13 @@
                 class="af-select-item af-select-item" data-id="24" data-op="odds-option-menu-item">Snooker</span></div>
           </div> <span data-v-045e5fcb="" class="title">
             {{ $route.params.name }}
-            <span data-v-045e5fcb="" class="arrow-icon"></span></span>
+            </span>
         </div>
       </div>
       <div data-v-045e5fcb="" class="info-container">
         <!---->
         <div data-v-045e5fcb="" class="m-nav-right">
-          <div data-v-045e5fcb="" class="slot-container"><a data-v-045e5fcb="">
-              <div data-v-045e5fcb="" class="search-icon"></div>
-            </a></div>
-          <div data-v-045e5fcb="" class="home-link">
+          <div data-v-045e5fcb="" @click="$router.push('/')" class="home-link">
             <div data-v-045e5fcb="" class="home-icon"></div>
           </div>
         </div>

@@ -58,52 +58,6 @@
     </div>
     <div v-else class="m-bethistory">
       <div data-v-5ac3f8c7="" class="m-order">
-        <div
-          data-v-5ac3f8c7=""
-          class="container m-calendar--order"
-          style="display: none"
-        >
-          <p class="close"></p>
-          <p class="title">Choose Date Range</p>
-          <div class="from-to-wrapper">
-            <span
-              class="from-to"
-              data-cms-key="from"
-              data-cms-page="common_dates"
-              style="width: 51%; display: inline-block"
-              >From</span
-            >
-            <span class="from-to" data-cms-key="to" data-cms-page="common_dates"
-              >To</span
-            >
-          </div>
-          <div class="">
-            <div class="m-select-date from">
-              <span class="select-index">dd/mm/yy</span>
-              <!---->
-            </div>
-            <div class="m-select-date to">
-              <span class="select-index">dd/mm/yy</span>
-              <!---->
-            </div>
-          </div>
-          <!---->
-          <!---->
-          <div
-            class="update"
-            data-cms-key="update"
-            data-cms-page="common_functions"
-          >
-            Update
-          </div>
-          <div class="back">Back to All Dates</div>
-          <div class="view-more">
-            <p>
-              View tickets from 6 months ago
-              <i class="icon"></i>
-            </p>
-          </div>
-        </div>
         <div data-v-5ac3f8c7="">
           <div
             data-v-5ac3f8c7=""
@@ -118,22 +72,39 @@
               <ul data-v-5ac3f8c7="" class="m-uc-nav m-order-select-nav">
                 <li
                   data-op="history-tag-Settled"
-                  class="m-nav-item m-nav-item--active"
+                  class="m-nav-item"
+                  :class="bet_type == 'settled' ? 'm-nav-item--active': bet_type == null ? 'm-nav-item--active':''"
+                  @click="
+                    $router.push({
+                      name: 'account-open_bets-bet_history',
+                      query: { type: 'settled' },
+                    })
+                  "
                 >
                   <span>Settled</span>
                 </li>
-                <li data-op="history-tag-Unsettled" class="m-nav-item">
+                <li
+                  data-op="history-tag-Unsettled"
+                  class="m-nav-item"
+                  :class="bet_type == 'pending' ? 'm-nav-item--active': ''"
+                  @click="
+                    $router.push({
+                      name: 'account-open_bets-bet_history',
+                      query: { type: 'pending' },
+                    })
+                  "
+                >
                   <span>Unsettled</span>
                 </li>
-                <li data-op="history-tag-All" class="m-nav-item">
+                <!-- <li data-op="history-tag-All" class="m-nav-item">
                   <span>All</span>
-                </li>
+                </li> -->
               </ul>
             </div>
-            <div data-v-5ac3f8c7="" class="m-l-right all-dates">
+            <!-- <div data-v-5ac3f8c7="" class="m-l-right all-dates">
               <span data-v-5ac3f8c7="" class="m-txt"> All Dates</span>
               <span data-v-5ac3f8c7="" class="i-icon-more"></span>
-            </div>
+            </div> -->
           </div>
           <div
             data-v-5ac3f8c7=""
@@ -154,36 +125,35 @@
             </div>
             <div data-v-5ac3f8c7="">
               <div data-v-5ac3f8c7="" class="wide"></div>
-              <div data-v-5ac3f8c7="" class="year">2022</div>
-              <div data-v-5ac3f8c7="" class="ticket-list">
+              <!-- <div data-v-5ac3f8c7="" class="year">2022</div> -->
+              <div v-for="(group,index) in details" :key="index" data-v-5ac3f8c7="" class="ticket-list">
                 <div data-v-5ac3f8c7="" class="date">
-                  <div data-v-5ac3f8c7="" class="day">27</div>
+                  <div data-v-5ac3f8c7="" class="day">{{ betlistformatDate(index,'D') }}</div>
                   <div
                     data-v-5ac3f8c7=""
                     class="month"
                     data-cms-key="nov"
                     data-cms-page="common_dates"
                   >
-                    Nov
+                    {{ betlistformatDate(index,'MMM') }}
                   </div>
                 </div>
                 <div data-v-5ac3f8c7="" class="place"></div>
-                <div data-v-5ac3f8c7="" data-op="history-row" class="list">
-                  <div data-v-5ac3f8c7="" class="bar lost">
+                <div v-for="(list, k) in group" :key="k" data-v-5ac3f8c7="" data-op="history-row" class="list">
+                  <div data-v-5ac3f8c7="" class="bar" :class="list.status == 1 ? 'win': list.status == 2 ? 'lost' : 'pending'">
                     <span data-v-5ac3f8c7="" class="type"
-                      ><span data-v-5ac3f8c7=""> Multiple </span>
+                      ><span data-v-5ac3f8c7=""> {{ list.bet_type }} </span>
                       <!----></span
                     >
                     <span
                       data-v-5ac3f8c7=""
                       data-op="history-status"
                       class="status"
-                      ><span data-v-5ac3f8c7=""> Lost </span>
+                      ><span data-v-5ac3f8c7=""> {{ list.status == 1 ? 'Won' : list.status == 2 ? 'Lost' : 'Pending' }} </span>
                       <i data-v-5ac3f8c7="" class="arrow"></i
                     ></span>
                   </div>
 
-                  
                   <!---->
                   <!---->
                   <div data-v-5ac3f8c7="" class="title">
@@ -196,124 +166,30 @@
                   </div>
                   <div data-v-5ac3f8c7="" class="total_info">
                     <span data-v-5ac3f8c7="" data-op="history-stake-amount"
-                      >200.00</span
+                      >{{ list.stake }}</span
                     >
                     <span
                       data-v-5ac3f8c7=""
                       data-op="history-return-amount"
                       class=""
-                      >0.00</span
+                      >{{ list.winnings }}</span
                     >
                   </div>
                   <!---->
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <li data-v-5ac3f8c7="">Doncaster Rovers v Walsall FC</li>
+                  <ul v-for="(event, i) in list.selections.slice(0,2)" :key="i" data-v-5ac3f8c7="" class="teams">
+                    <li data-v-5ac3f8c7="">{{ event.event }}</li>
                     <!---->
                   </ul>
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <li data-v-5ac3f8c7="">Carlisle United v Sutton United</li>
-                    <!---->
+
+                  <ul v-if="list.selections.length > 3" data-v-5ac3f8c7="" class="teams">
+                    <li data-v-5ac3f8c7="">...(and {{ list.selections.slice(3,-1).length }} other matches)</li>
                   </ul>
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <li data-v-5ac3f8c7="">
-                      Hartlepool United v Stockport County FC
-                    </li>
-                    <!---->
-                  </ul>
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <!---->
-                    <li data-v-5ac3f8c7="">...(and 20 other matches)</li>
-                  </ul>
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <!---->
-                    <!---->
-                  </ul>
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <!---->
-                    <!---->
-                  </ul>
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <!---->
-                    <!---->
-                  </ul>
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <!---->
-                    <!---->
-                  </ul>
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <!---->
-                    <!---->
-                  </ul>
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <!---->
-                    <!---->
-                  </ul>
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <!---->
-                    <!---->
-                  </ul>
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <!---->
-                    <!---->
-                  </ul>
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <!---->
-                    <!---->
-                  </ul>
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <!---->
-                    <!---->
-                  </ul>
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <!---->
-                    <!---->
-                  </ul>
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <!---->
-                    <!---->
-                  </ul>
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <!---->
-                    <!---->
-                  </ul>
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <!---->
-                    <!---->
-                  </ul>
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <!---->
-                    <!---->
-                  </ul>
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <!---->
-                    <!---->
-                  </ul>
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <!---->
-                    <!---->
-                  </ul>
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <!---->
-                    <!---->
-                  </ul>
-                  <ul data-v-5ac3f8c7="" class="teams">
-                    <!---->
-                    <!---->
-                  </ul>
+
                   <!---->
                   <div data-v-5ac3f8c7="" class="narrow"></div>
                 </div>
               </div>
             </div>
-            <!---->
-            <div data-v-5ac3f8c7="" class="view-more">
-              <p data-v-5ac3f8c7="">Show only tickets in last 6 months</p>
-              <p data-v-5ac3f8c7="">
-                View older tickets<i data-v-5ac3f8c7="" class="icon"></i>
-              </p>
-            </div>
-            <div style="width: 100%; opacity: 0; visibility: hidden"></div>
-            <!---->
           </div>
         </div>
       </div>
@@ -323,13 +199,66 @@
 </template>
 
 <script>
-import BetHeader from '~/components/BetHeader.vue';
+import BetHeader from "~/components/BetHeader.vue";
+import _ from 'lodash'
 export default {
-  components: { BetHeader },};
+  components: { BetHeader },
+  watch: {
+    $route: {
+      immediate: true,
+      handler(to) {
+        this.bet_type = to.query.type ?? null;
+        this.getBetlist(this.bet_type)
+      },
+    },
+  },
+  data(){
+    return {
+      bet_type: '',
+      details:[]
+    }
+  },
+  methods:{
+    getBetlist(type) {
+      this.loading = true;
+      if(type == 'pending'){
+        this.$axios
+          .get("user/account/open-bets")
+          .then((res) => {
+            this.details = _.groupBy(res.data.bets, "created_at");
+            this.loading = false;
+          })
+          .catch((error) => {
+            this.loading = false;
+            this.error = error.message;
+            // console.log(err);
+          });
+      }else{
+        this.$axios
+          .post("user/account/settled-bets")
+          .then((res) => {
+            this.details = _.groupBy(res.data.bets.data, "created_at");
+            this.loading = false;
+          })
+          .catch((error) => {
+            this.loading = false;
+            this.error = error.message;
+            // console.log(err);
+          });
+      }
+    },
+    betlistformatDate(date, n){
+      return this.$moment(date).format(n);
+    },
+    showOnlyWins(){
+
+    }
+  }
+};
 </script>
 
 <style>
-@import url('~/assets/css/bethistory.css');
+@import url("~/assets/css/bethistory.css");
 .m-sportBets .m-list-nav-type[data-v-08f78d50] {
   background: #353a45;
   padding: 0 2.08333333rem;

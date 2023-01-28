@@ -1,104 +1,40 @@
 <template>
   <div class="m-sportBets">
-    <div style="width: 414px; height: 87px"></div>
+    <div style="width: 100%; height: 87px"></div>
     <div
-      class="fixed-wrap undefined"
-      data-offset="0"
-      data-new-z-index="1000"
-      data-cls="undefined"
-      data-disable-sticky="false"
-      data-position=""
-      data-top=""
-      data-z-index=""
-      data-fixed="1"
+      class="fixed-wrap w-100"
       style="position: fixed; top: 0rem; z-index: 1000"
     >
-      <div>
-        <!---->
-        <div class="m-openbet-header">
-          <div class="no-login">
-            <span data-cms-key="register" data-cms-page="common_functions"
-              >Register</span
-            >
-            <span data-cms-key="log_in" data-cms-page="common_functions"
-              >Login</span
-            >
-          </div>
-        </div>
-      </div>
+      <!-- Bet Header -->
+      <bet-header></bet-header>
+      <!-- Bet Header -->
       <div
         data-v-08f78d50=""
         class="m-snap-nav-wrap m-list-nav-type m-bets--nav"
-        style="overflow: hidden"
       >
-        <ul
-          class="m-snap-nav flex"
-          style="
-            transform: translate(0px, 0px) translateZ(0px);
-            transition-duration: 350ms;
-            transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
-            width: 360px;
-          "
-        >
+        <ul class="m-snap-nav flex" style="width: 100%">
           <li
             data-v-08f78d50=""
             class="m-list-nav-type-item m-snap-nav-item active"
           >
-            <router-link to="/account/open_bets">
-              <span
-              data-v-08f78d50=""
-              class="text-secondary"
-              >Open Bets</span
-            >
-            </router-link>
-            <!---->
+            <span data-v-08f78d50="">Open Bets</span>
           </li>
           <li data-v-08f78d50="" class="m-list-nav-type-item m-snap-nav-item">
             <router-link to="/account/open_bets/bet_history">
-              <span
-              data-v-08f78d50=""
-              class="text-white"
-              >Bet History</span
-            >
+              <span data-v-08f78d50="" class="text-white">Bet History</span>
             </router-link>
-            <!---->
           </li>
         </ul>
-        <i class="controls left-controls"></i>
-        <i class="controls right-controls"></i>
       </div>
     </div>
-    <div data-v-0783d367="">
-      <div data-v-6b611fb0="" data-v-0783d367="" class="m-openbet">
-        <!---->
-        <div data-v-6b611fb0="" class="m-error-wrapper">
-          <div data-v-6b611fb0="">
-            <span
-              data-v-6b611fb0=""
-              class="m-error-msg"
-              data-cms-key="please_log_in_to_see_your_open_and_cashout"
-              data-cms-page="bet_history"
-              >Please Log In to see your Open Bets and Cashout Bets</span
-            >
-            <div
-              data-v-6b611fb0=""
-              class="m-btn--text"
-              data-cms-key="what_is_cashout"
-              data-cms-page="bet_history"
-            >
-              What is Cashout?
-            </div>
-            <router-link to="/login">
-              <div class="m-btn">Login</div>
-            </router-link>
-          </div>
-        </div>
-        <!---->
-      </div>
-      <div data-v-0783d367="" class="m-sportBets m-cashout">
-        <div data-v-0783d367="" id="j_pop_cashout" class="m-cashout-pop">
-          <!---->
-          <!---->
+    <div data-v-6b611fb0="" data-v-5162d54a="" class="m-openbet">
+      <!---->
+      <div data-v-6b611fb0="" class="m-error-wrapper">
+        <div data-v-6b611fb0="">
+          <span data-v-6b611fb0="" class="m-error-msg">
+            You currently have no Open Bets.
+          </span>
+          <div data-v-6b611fb0="" class="m-btn--text">What is Cashout?</div>
         </div>
       </div>
       <!---->
@@ -107,7 +43,60 @@
 </template>
 
 <script>
-export default {};
+import BetHeader from "~/components/BetHeader.vue";
+import _ from "lodash";
+export default {
+  components: { BetHeader },
+  watch: {
+    $route: {
+      immediate: true,
+      handler(to) {
+        this.bet_type = to.query.type ?? null;
+        this.getBetlist(this.bet_type);
+      },
+    },
+  },
+  data() {
+    return {
+      bet_type: "",
+      details: [],
+    };
+  },
+  methods: {
+    getBetlist(type) {
+      this.loading = true;
+      if (type == "pending") {
+        this.$axios
+          .get("user/account/open-bets")
+          .then((res) => {
+            this.details = _.groupBy(res.data.bets, "created_at");
+            this.loading = false;
+          })
+          .catch((error) => {
+            this.loading = false;
+            this.error = error.message;
+            // console.log(err);
+          });
+      } else {
+        this.$axios
+          .post("user/account/settled-bets")
+          .then((res) => {
+            this.details = _.groupBy(res.data.bets.data, "created_at");
+            this.loading = false;
+          })
+          .catch((error) => {
+            this.loading = false;
+            this.error = error.message;
+            // console.log(err);
+          });
+      }
+    },
+    betlistformatDate(date, n) {
+      return this.$moment(date).format(n);
+    },
+    showOnlyWins() {},
+  },
+};
 </script>
 
 <style>

@@ -9,7 +9,7 @@
                 data-v-306414ab=""
                 src="https://s.sporty.net/global/main/modules/main/mobile/index/img/account.dae19b799c.svg"
             /></span>
-            <div data-v-306414ab="" class="wording-wrap">
+            <div v-if="!$auth.loggedIn" data-v-306414ab="" class="wording-wrap">
               <router-link to="/login">
                 <div
                   data-v-306414ab=""
@@ -18,6 +18,19 @@
                 >
                   Login to View <span @click="logout">logout</span>
                 </div>
+              </router-link>
+              <i data-v-306414ab="" class="m-icon-arrow1"></i>
+            </div>
+            <div v-else data-v-306414ab="" class="wording-wrap">
+              <router-link to="/login">
+                <div
+                  data-v-306414ab=""
+                  class="account text-white"
+
+                >
+                  {{ $auth.user.username }}
+                </div>
+                <span @click="logout">logout</span>
               </router-link>
               <i data-v-306414ab="" class="m-icon-arrow1"></i>
             </div>
@@ -33,7 +46,7 @@
             <div data-v-306414ab="" class="title">Total Balance</div>
             <div data-v-306414ab="" data-op="me_balance" class="value">
               <span data-v-306414ab="">NGN</span
-              ><span data-v-306414ab=""> 0.00</span>
+              ><span data-v-306414ab=""> {{ $auth.user.available_balance }}</span>
             </div>
           </div>
           <div data-v-306414ab="" class="w-d-wrap">
@@ -68,8 +81,8 @@
         <div data-v-306414ab="" class="transaction-wrap">
           <div
             data-v-306414ab=""
-            data-op="me_sb_bethistory"
             class="transaction-wrap-item history"
+            @click="$router.push('/account/open_bets')"
           >
             <img
               data-v-306414ab=""
@@ -77,8 +90,6 @@
               class="transaction-wrap-item-img"
             /><span
               data-v-306414ab=""
-              data-cms-key="sports_bet_history"
-              data-cms-page="wap_me"
               >Sports Bet History</span
             >
           </div>
@@ -86,6 +97,7 @@
             data-v-306414ab=""
             data-op="me_transaction"
             class="transaction-wrap-item transaction"
+            @click="$router.push('/account/transactions')"
           >
             <img
               data-v-306414ab=""

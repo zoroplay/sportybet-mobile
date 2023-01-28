@@ -2452,13 +2452,13 @@ only screen and (min-width: 2560px) {
   color: #3656A3;
   font-size: 1.16666667rem;
 }
-
+/*
 #enterMobile .facebook-container {
   height: 6.75rem;
   margin-top: 3.75rem;
   border-top: 1px solid #e8e8e8;
   width: 80%;
-  width: calc(100% - 60/12rem);
+  width: calc(100% - 60/192px);
   padding: 0 2.5rem;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -2476,7 +2476,7 @@ only screen and (min-width: 2560px) {
   -ms-flex-align: center;
   align-items: center;
   background-color: #FFFFFF;
-}
+} */
 
 #enterMobile .facebook-container .or-area {
   padding-left: 0.16666667rem;
@@ -2803,7 +2803,7 @@ only screen and (min-width: 2560px) {
   margin-left: 40px;
   border-top: 1px solid #e8e8e8;
   width: 80%;
-  width: calc(100% - 60/12rem);
+  /* width: calc(100% - 60/12rem); */
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6495,7 +6495,7 @@ only screen and (min-width: 2560px) {
   flex-direction: column;
   margin-top: 3.75rem;
   width: 80%;
-  width: calc(100% - 60/12rem);
+  /* width: calc(100% - 60/12rem); */
 }
 
 #loginStep .or-area div {

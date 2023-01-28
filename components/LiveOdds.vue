@@ -1,5 +1,5 @@
 <template>
-  <div @click="addToBetslip" class="m-outcome m-event-outcome-default" :class="[odds == undefined ? 'm-outcome--disabled':'', isSelected(createID(fixture.provider_id, markets.id, outcome.name, outcome.id ), betslip ) ? 'm-outcome--checked' : '']" data-op="label-odds">
+  <div @click="addToBetslip" class="m-outcome m-event-outcome-default" :class="[odds == undefined ? 'm-outcome--disabled':'', isSelected(createID(fixture.provider_id, markets.id, outcome.name.toLowerCase(), outcome.id ), betslip ) ? 'm-outcome--checked' : '']" data-op="label-odds">
     <span class="m-outcome-odds"> {{ odds }} </span>
     <span v-if="odds == undefined" class="m-outcome-odds m-icon-lock"></span>
   </div>
