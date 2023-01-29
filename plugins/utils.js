@@ -153,6 +153,9 @@ Vue.mixin({
     },
     betslip(){
       return this.$store.state.coupon.betslip;
+    },
+    sports(){
+      return this.$store.state.sports;
     }
   },
   methods: {

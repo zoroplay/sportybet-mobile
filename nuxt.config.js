@@ -77,6 +77,7 @@ export default {
 
   //router
   router: {
+    middleware: ['onload'],
     extendRoutes(routes, resolve) {
       routes.push({
         name: "sport-name-live-eventid",

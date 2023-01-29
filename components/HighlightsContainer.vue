@@ -13,11 +13,11 @@
           "
         >
           <li
-            v-for="(sport, index) in sport_list_menu"
-            @click="setActive(sport.id)"
+            v-for="(sport, index) in sports"
+            @click="setActive(sport.sport_id)"
             :key="index"
-            :id="'highlights_'+sport.id"
-            :class="sport.id == active_sport ? 'active' : ''"
+            :id="'highlights_' + sport.sport_id"
+            :class="sport.sport_id == active_sport ? 'active' : ''"
             class="m-sport-type-item m-snap-nav-item"
             data-op="home_prematch-tabFootball "
           >
@@ -132,7 +132,7 @@
           style=""
         >
           <div class="m-highlights-wrap" style="position: relative">
-            <div v-if="Object.keys(highlights).length" class="m-bet-content">
+            <div v-if="Object.keys(highlights).length && !loading" class="m-bet-content">
               <div
                 v-for="(group, index) in highlights"
                 :key="index"
@@ -241,7 +241,13 @@
                 </a>
               </div>
             </div>
-            <div v-else class="m-loading-wrap"><div class="m-loading dark"><div class="loading"></div> <!----></div></div>
+            <div v-if="loading" class="m-loading-wrap">
+              <div class="m-loading dark">
+                <div class="loading"></div>
+                <!---->
+              </div>
+            </div>
+            <div v-if="!Object.keys(highlights).length" class="no-data"><div style="white-space: pre-line;"><p>Sorry, there are no games currently available</p> <p>in this odds filter range. Please try later.</p> <p>Thank you.</p></div></div>
             <!---->
           </div>
         </div>
@@ -253,7 +259,7 @@
           tabindex="0"
         >
           <div style="position: relative">
-            <div v-if="Object.keys(today).length" class="m-bet-content">
+            <div v-if="Object.keys(today).length && !loading" class="m-bet-content">
               <div
                 v-for="(group, index) in today"
                 :key="index"
@@ -289,7 +295,18 @@
                       >
                     </div>
                     <div class="m-table-row m-sports-table">
-                      <div class="m-table-cell m-info-cell" @click="$router.push({name:'sport-name-pre-eventid',params:{name:event.sport_name,eventid:event.provider_id} })">
+                      <div
+                        class="m-table-cell m-info-cell"
+                        @click="
+                          $router.push({
+                            name: 'sport-name-pre-eventid',
+                            params: {
+                              name: event.sport_name,
+                              eventid: event.provider_id,
+                            },
+                          })
+                        "
+                      >
                         <div class="team">{{ event.team_a }}</div>
                         <div class="team">{{ event.team_b }}</div>
                       </div>
@@ -342,8 +359,22 @@
                 >
               </div>
             </div>
-            <div v-else class="m-loading-wrap"><div class="m-loading dark"><div class="loading"></div> <!----></div></div>
-            <!---->
+            <div
+              v-else-if="loading"
+              class="m-loading-wrap"
+            >
+              <div class="m-loading dark">
+                <div class="loading"></div>
+                <!---->
+              </div>
+            </div>
+            <div class="no-data" v-if="!Object.keys(today).length && !loading">
+              <div style="white-space: pre-line">
+                <p>Sorry, there are no games currently available</p>
+                <p>in this odds filter range. Please try later.</p>
+                <p>Thank you.</p>
+              </div>
+            </div>
           </div>
         </div>
         <div
@@ -372,17 +403,17 @@
                   :key="index"
                   class="m-league"
                 >
-                  <div class="m-league-title hide" @click="showChild($event, index)">
+                  <div
+                    class="m-league-title hide"
+                    @click="showChild($event, index)"
+                  >
                     <span class="icon-triangle"></span>
                     <span class="text"> {{ country.name }} </span>
                     <!---->
                     <span class="m-event-size"> {{ country.total }} </span>
                     <!---->
                   </div>
-                  <div
-                    :id="index + '_child'"
-                    class="m-league-conent d-none"
-                  >
+                  <div :id="index + '_child'" class="m-league-conent d-none">
                     <div class="m-tournament-list">
                       <ul class="m-country-row">
                         <li
@@ -392,6 +423,11 @@
                         >
                           <a
                             class=""
+                            :to="{
+                              name: 'sport-name',
+                              params: { name: 'Soccer' },
+                              query: { tournament_id: 1 },
+                            }"
                             ><div class="m-item-left">
                               {{ tournament.name }}
                             </div>
@@ -437,7 +473,8 @@ export default {
       countries: [],
       sports_list: [],
       active_sport: 1,
-      predictions: []
+      predictions: [],
+      loading: false,
     };
   },
   computed: {
@@ -454,6 +491,7 @@ export default {
   },
   methods: {
     getHighlights() {
+      this.loading = true
       this.$axios
         .get(
           "sports/get-fixtures-by-sport-date?date=" +
@@ -469,10 +507,12 @@ export default {
             res.data.fixtures.slice(0, 15),
             "event_date"
           );
-          this.predictions = res.data.predictions
+          this.predictions = res.data.predictions;
+          this.loading = false
         });
     },
     getToday() {
+       this.loading = true
       this.$axios
         .get(
           "sports/get-fixtures-by-sport-date?date=" +
@@ -483,10 +523,12 @@ export default {
         )
         .then((res) => {
           this.today = _.groupBy(res.data.fixtures.slice(0, 15), "event_date");
-          this.predictions = res.data.predictions
+          this.predictions = res.data.predictions;
+          this.loading = false
         });
     },
     getCountries() {
+       this.loading = true
       this.$axios
         .get("sports/get-menu?period=all&start=null&end=null")
         .then((res) => {
@@ -496,6 +538,7 @@ export default {
               (obj) => obj.sport_id === this.active_sport
             );
           }
+          this.loading = false
         });
     },
     setActive(id) {
@@ -505,9 +548,14 @@ export default {
       this.countries = this.sports_list.find(
         (obj) => obj.sport_id === this.active_sport
       );
-      document.getElementById('highlights_'+id).scrollIntoView({behavior: "smooth", behavior: 'smooth',
-        block: 'nearest',
-        inline: 'center'})
+      document
+        .getElementById("highlights_" + id)
+        .scrollIntoView({
+          behavior: "smooth",
+          behavior: "smooth",
+          block: "nearest",
+          inline: "center",
+        });
     },
     showChild(e, index) {
       let y = $(e.target).hasClass("hide");
@@ -518,7 +566,7 @@ export default {
       }
       $("#" + index + "_child").toggleClass("d-none");
     },
-    addToBetslip(game,odds) {
+    addToBetslip(game, odds) {
       const data = {
         fixture: game,
         market_id: this.predictions[0]?.market_id,
@@ -532,10 +580,10 @@ export default {
           odds.name,
           odds.id
         ),
-        fixture_type: 'pre'
+        fixture_type: "pre",
       };
       this.$store.dispatch("coupon/addToCoupon", data);
-    }
+    },
   },
   mounted() {
     this.getHighlights();

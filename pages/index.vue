@@ -76,7 +76,7 @@
           "
         >
           <li class="m-sports-choose-item m-snap-nav-item active">
-            <a href="/sports">
+            <a href="/sport">
               <div class="sport-icon">
                 <img
                   src="~/assets/img/icons/soccer.png"
@@ -89,7 +89,7 @@
             </a>
           </li>
           <li class="m-sports-choose-item m-snap-nav-item">
-            <a href="/sports/live" data-op="home_nav_Live" draggable="false">
+            <a href="/sport/live" data-op="home_nav_Live" draggable="false">
               <div class="sport-icon">
                 <img
                   src="~/assets/img/icons/live.png"
@@ -129,7 +129,6 @@
           </li>
           <li class="m-sports-choose-item m-snap-nav-item">
             <a
-              href="https://www.sportybet.com/ng/m/virtuals-lobby"
               data-op="home_nav_Virtuals"
               draggable="false"
             >
@@ -146,7 +145,6 @@
           </li>
           <li class="m-sports-choose-item m-snap-nav-item">
             <a
-              href="https://www.sportybet.com/ng/m/load_code?source=home"
               data-op="home_nav_Load Code"
               draggable="false"
             >
@@ -162,7 +160,7 @@
             </a>
           </li>
           <li
-            v-for="(sport, index) in sport_list_menu"
+            v-for="(sport, index) in sports"
             :key="index"
             class="m-sports-choose-item m-snap-nav-item"
           >
@@ -181,109 +179,6 @@
               </div>
               <span class="sport-text">{{ sport.name }} </span>
             </router-link>
-          </li>
-          <li class="m-sports-choose-item m-snap-nav-item">
-            <a
-              href="https://www.sportybet.com/ng/m/jackpot?source=home"
-              data-op="home_nav_Jackpot"
-              draggable="false"
-            >
-              <div class="sport-icon">
-                <img
-                  src="https:https://s.sporty.net/common/main/res/515adceda4d1b2d562fe344bd8515ec5.png"
-                  loading="lazy"
-                  width="20"
-                  height="20"
-                />
-              </div>
-              <span class="sport-text">Jackpot</span>
-            </a>
-          </li>
-          <li class="m-sports-choose-item m-snap-nav-item">
-            <a
-              href="https://www.sportybet.com/ng/m/games/sportygames?game=spin-to-win"
-              data-op="home_nav_Spin2Win"
-              draggable="false"
-            >
-              <div class="sport-icon">
-                <img
-                  src="https:https://s.sporty.net/common/main/res/c836d8081af9f34f270b34d7b4306fa5.png"
-                  loading="lazy"
-                  width="20"
-                  height="20"
-                />
-              </div>
-              <span class="sport-text">Spin2Win</span>
-            </a>
-          </li>
-          <li class="m-sports-choose-item m-snap-nav-item">
-            <a
-              href="https://www.sportybet.com/ng/m/games/sportygames?game=even-odd"
-              data-op="home_nav_EvenOdd"
-              draggable="false"
-            >
-              <div class="sport-icon">
-                <img
-                  src="https:https://s.sporty.net/common/main/res/6593ec06f041b4560fccc5995665df83.png"
-                  loading="lazy"
-                  width="20"
-                  height="20"
-                />
-              </div>
-              <span class="sport-text">EvenOdd</span>
-            </a>
-          </li>
-          <li class="m-sports-choose-item m-snap-nav-item">
-            <a
-              href="https://www.sportybet.com/ng/m/games/sportygames?game=blackjack"
-              data-op="home_nav_BlackJack"
-              draggable="false"
-            >
-              <div class="sport-icon">
-                <img
-                  src="https:https://s.sporty.net/common/main/res/ec5c0f60fb02818718314eecaf9e5a2d.png"
-                  loading="lazy"
-                  width="20"
-                  height="20"
-                />
-              </div>
-              <span class="sport-text">BlackJack</span>
-            </a>
-          </li>
-
-          <li class="m-sports-choose-item m-snap-nav-item">
-            <a
-              href="https://livescore.sportybet.com/?source=home"
-              data-op="home_nav_Livescore"
-              draggable="false"
-            >
-              <div class="sport-icon">
-                <img
-                  src="https:https://s.sporty.net/common/main/res/1bb13bffe71ad5abd3404668611eaef9.png"
-                  loading="lazy"
-                  width="20"
-                  height="20"
-                />
-              </div>
-              <span class="sport-text">Livescore</span>
-            </a>
-          </li>
-          <li class="m-sports-choose-item m-snap-nav-item">
-            <a
-              href="https://www.sportybet.com/ng/m/liveResult?source=home"
-              data-op="home_nav_Results"
-              draggable="false"
-            >
-              <div class="sport-icon">
-                <img
-                  src="https:https://s.sporty.net/common/main/res/29b7cd11599a9c032819c3dede3ad8a0.png"
-                  loading="lazy"
-                  width="20"
-                  height="20"
-                />
-              </div>
-              <span class="sport-text">Results</span>
-            </a>
           </li>
         </ul>
         <i class="controls left-controls"></i>
@@ -317,7 +212,7 @@
                   height="45"
               /></router-link>
             </li>
-            <li class="m-popular-item m-snap-nav-item">
+            <!-- <li class="m-popular-item m-snap-nav-item">
               <div class="m-color-bar m-color-bar--green"></div>
               <router-link
                 :to="{
@@ -331,7 +226,7 @@
                   width="104"
                   height="45"
               /></router-link>
-            </li>
+            </li> -->
             <li class="m-popular-item m-snap-nav-item">
               <div class="m-color-bar m-color-bar--red"></div>
               <router-link

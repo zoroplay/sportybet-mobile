@@ -44,16 +44,16 @@
               "
             >
               <li
-                v-for="(sport, index) in sport_list_menu"
+                v-for="(sport, index) in sports_list"
                 @click="setActive(sport)"
-                :id="'sports_' + sport.id"
-                :class="sport.id == active_sport ? 'active' : ''"
+                :id="'sports_' + sport.sport_id"
+                :class="sport.sport_id == active_sport ? 'active' : ''"
                 :key="index"
                 class="m-sports-choose-item m-snap-nav-item"
               >
                 <div
                   class="sprot-icon m-icon-football"
-                  :class="'m-icon-' + sport.id"
+                  :class="'m-icon-' + sport.sport_id"
                 ></div>
                 <div class="sport-text">{{ sport.name }}</div>
               </li>
@@ -250,13 +250,13 @@ export default {
       $("#" + index + "_child").toggleClass("d-none");
     },
     setActive(sport) {
-      this.active_sport = sport.id;
+      this.active_sport = sport.sport_id;
       this.$router.replace({ query: { sport: sport.name } });
       this.countries = this.sports_list.find(
         (obj) => obj.sport_id === this.active_sport
       );
       document
-        .getElementById("sports_" + sport.id)
+        .getElementById("sports_" + sport.sport_id)
         .scrollIntoView({
           behavior: "smooth",
           behavior: "smooth",

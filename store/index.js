@@ -31,8 +31,8 @@ export const actions = {
     commit("setLive", value);
   },
   setCommitMenu({ commit }, value) {
-    this.$axios.get('/sports/top-bets').then((res)=>{
-      commit("setMenu", res.data.splice(0,4));
+    this.$axios.get("sports/get-menu?period=all&start=null&end=null").then((res)=>{
+      commit("setMenu", res.data.menu);
     })
   },
   setCommitActiveSport({ commit }, value) {
@@ -47,4 +47,9 @@ export const actions = {
 }
 
 export const strict = false
+
+const fetchGlobalVars = () => axios.get(`/utilities/globalvariables`);
+
+const fetchBonusList = () => axios.get(`/utilities/bonuslist?section=onliners`);
+
 
