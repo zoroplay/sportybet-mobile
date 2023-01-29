@@ -138,7 +138,7 @@ export default {
         endpoints: {
           login: { url: "/auth/login?source=web", method: "post" },
           logout: { url: "/auth/logout", method: "get" },
-          // refresh: { url: "/refresh", method: "post" },
+          refresh: { url: "/auth/details", method: "get" },
           user: { url: "/auth/details", method: "get" },
         },
       },

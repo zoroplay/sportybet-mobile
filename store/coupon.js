@@ -272,7 +272,7 @@ const actions = {
     const globalVars = { ...rootState.SportsbookGlobalVariable };
     const bonusList = [...rootState.SportsbookBonusList];
 
-    console.log(type)
+    type = 'bet'
 
     commit("doLoading");
         let ele = e.target;
@@ -306,87 +306,89 @@ const actions = {
         }
         ele.disabled = true;
         const prevHTML = ele.innerHTML;
-        ele.innerHTML = '...';
+        ele.innerHTML = 'Submitting';
+        ele.classList.add
 
         this.$axios.post(url, coupondata).then(res => {
             ele.disabled = false;
             // commit("doLoading");
-            ele.innerHTML = prevHTML;
+            // ele.innerHTML = prevHTML;
 
             if (res.success) {
               console.log(type)
                 if (type === 'bet') {
                     // update user balance
-                    // dispatch({type: UPDATE_USER_BALANCE, payload: res.balance});
-                    // update todays bet
-                    // dispatch({type: SET_TODAYS_BET, payload: res.coupon});
-                    // dispatch({type: CANCEL_BET});
+                    this.$auth.fetchUser()
+                    // clear slip
+                    this.$store.dispatch('cancelBet')
                     // printTicket(res.coupon.betslip_id, 'bet')
                 } else {
                     ele.innerHTML = prevHTML;
+                    console.log(type)
+                    console.log('=-09089786tyrtdgchvnmbvcv')
                 }
                 return dispatch({type: SET_BET_PLACED, payload: res});
             }
-            // else if (res.message === 'auth_fail') {
-            //     return dispatch({type: SHOW_LOGIN_MODAL})
-            // } else if (res.error === 'odds_change') {
-            //     // let bets = this.$store.getters.bets;
-            //     _.each(coupondata.selection, function (value) {
-            //         _.each(res.events, function (item) {
-            //             if (value.provider_id === item.provider_id && value.odd_name === item.odd_name) {
-            //                 value.hasError = true;
-            //             }
-            //         });
-            //     });
-            //     toast.error('Attention! some odds have been changed');
+            else if (res.message === 'auth_fail') {
+                return dispatch({type: SHOW_LOGIN_MODAL})
+            } else if (res.error === 'odds_change') {
+                // let bets = this.$store.getters.bets;
+                _.each(coupondata.selection, function (value) {
+                    _.each(res.events, function (item) {
+                        if (value.provider_id === item.provider_id && value.odd_name === item.odd_name) {
+                            value.hasError = true;
+                        }
+                    });
+                });
+                toast.error('Attention! some odds have been changed');
 
-            //     coupondata.errorMsg = 'Attention! some odds have been changed';
-            //     coupondata.hasError = true;
+                coupondata.errorMsg = 'Attention! some odds have been changed';
+                coupondata.hasError = true;
 
-            //     //update bets state in redux
-            //     return dispatch({type: SET_COUPON_DATA, payload: coupondata});
+                //update bets state in redux
+                return dispatch({type: SET_COUPON_DATA, payload: coupondata});
 
-            // } else if (res.error === 'events_started') {
-            //     _.each(coupondata.selections, (value) => {
-            //         _.each(res.events, (item) => {
-            //             if (value.event_id === item.event_id) {
-            //                 value.hasError = true
-            //             }
-            //         });
-            //     });
-            //     toast.error('Attention! Some events have started');
+            } else if (res.error === 'events_started') {
+                _.each(coupondata.selections, (value) => {
+                    _.each(res.events, (item) => {
+                        if (value.event_id === item.event_id) {
+                            value.hasError = true
+                        }
+                    });
+                });
+                toast.error('Attention! Some events have started');
 
-            //     coupondata.errorMsg = 'Attention! Some events have started';
-            //     coupondata.hasError = true;
-            //     coupondata.tournaments = groupTournament(coupondata.selections);
-            //     // coupondata.fixtures = groupSelections(coupondata.selections);
-            //     //update bets state in redux
-            //     commit("setCouponData", coupondata);
+                coupondata.errorMsg = 'Attention! Some events have started';
+                coupondata.hasError = true;
+                coupondata.tournaments = groupTournament(coupondata.selections);
+                // coupondata.fixtures = groupSelections(coupondata.selections);
+                //update bets state in redux
+                commit("setCouponData", coupondata);
 
-            // } else if (res.error === 'events_finished') {
-            //     _.each(coupondata.selections, (value) => {
-            //         _.each(res.events, (item) => {
-            //             if (value.event_id === item.event_id) {
-            //                 value.hasError = true
-            //             }
-            //         });
-            //     });
-            //     toast.error('Attention! Some events have ended. Remove them to continue.');
+            } else if (res.error === 'events_finished') {
+                _.each(coupondata.selections, (value) => {
+                    _.each(res.events, (item) => {
+                        if (value.event_id === item.event_id) {
+                            value.hasError = true
+                        }
+                    });
+                });
+                toast.error('Attention! Some events have ended. Remove them to continue.');
 
-            //     coupondata.errorMsg = 'Attention! Some events have ended. Remove them to continue.';
-            //     coupondata.hasError = true;
-            //     coupondata.tournaments = groupTournament(coupondata.selections);
-            //     // coupondata.fixtures = groupSelections(coupondata.selections)
-            //     // update bets state in redux
-            //     commit("setCouponData", coupondata);
+                coupondata.errorMsg = 'Attention! Some events have ended. Remove them to continue.';
+                coupondata.hasError = true;
+                coupondata.tournaments = groupTournament(coupondata.selections);
+                // coupondata.fixtures = groupSelections(coupondata.selections)
+                // update bets state in redux
+                commit("setCouponData", coupondata);
 
-            // } else {
-            //   commit("setLoading");
+            } else {
+              commit("setLoading");
 
-            //   toast.error(res.message || 'Something went wrong. We were unable to accept betslip.');
-            // }
+              toast.error(res.message || 'Something went wrong. We were unable to accept betslip.');
+            }
         }).catch(err => {
-          commit("setLoading");
+          console.log('wahala')
 
             ele.disabled = false;
             ele.innerHTML = prevHTML;
