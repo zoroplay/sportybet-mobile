@@ -98,6 +98,16 @@ export default {
         chunkNames: {
           layout: "layouts/default",
         },
+      },{
+        name: "account-openbets-betdetail",
+        path: "/account/open_bets/bet_history/detail/:couponid",
+        components: {
+          default: resolve(__dirname, "pages/account/open_bets/bet-detail"), // or routes[index].component
+          layout: resolve(__dirname, "layouts/default.vue"),
+        },
+        chunkNames: {
+          layout: "layouts/default",
+        },
       });
     },
   },

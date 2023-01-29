@@ -13,7 +13,7 @@
         <span
           ><img src="//s.sporty.net/common/avatar/30.png" class="usr-img"
         /></span>
-        <span class="balance"><span>NGN </span> <span>0.00</span></span>
+        <span class="balance"><span>NGN </span> <span>{{ $auth.user.available_balance }}</span></span>
       </div>
     </div>
   </div>

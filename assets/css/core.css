@@ -2766,3 +2766,99 @@ a, ins {
   flex: 1 1 auto;
   min-width: 1%
 }
+
+.m-sportBets .m-t-12 {
+  font-size: 1rem;
+  line-height: 1;
+}
+.m-sportBets .m-t-14 {
+  font-size: 1.16666667rem;
+}
+.m-sportBets .m-t-16 {
+  font-size: 1.33333333rem;
+  line-height: 1;
+}
+.m-sportBets .m-t-19 {
+  font-size: 1.58333333rem;
+  line-height: 1;
+}
+.m-sportBets .m-t-20 {
+  font-size: 1.66666667rem;
+  line-height: 1;
+}
+.m-sportBets .m-l-23 {
+  line-height: 1.91666667rem;
+}
+.m-sportBets .m-t-l14 {
+  line-height: 1.16666667rem;
+}
+.m-sportBets .m-t-l16 {
+  line-height: 1.33333333rem;
+}
+.m-sportBets .m-t-l20 {
+  line-height: 1.66666667rem;
+}
+.m-sportBets .m-t-white {
+  color: #ffffff;
+}
+.m-sportBets .m-t-gray {
+  color: #9ca0ab;
+}
+.m-sportBets .m-t-black {
+  color: #353a45;
+}
+.m-sportBets .m-t-green {
+  color: #0d9737;
+}
+.m-sportBets .m-t-dgreen {
+  color: #096b27;
+}
+.m-sportBets .m-t-bblack {
+  color: #1b1e25;
+}
+.m-sportBets .m-t-lblue {
+  color: #3656a3;
+}
+.m-sportBets .m-t-red {
+  color: #e41827;
+}
+.m-sportBets .m-t-center {
+  text-align: center;
+}
+.m-sportBets .m-t-right {
+  text-align: right;
+}
+.m-sportBets .m-t-bold {
+  font-weight: bold;
+}
+.m-sportBets .m-t-b5 {
+  font-weight: 500;
+}
+.m-sportBets .m-t-mt4 {
+  margin-top: 0.33333333rem;
+}
+.m-sportBets .m-t-ml6 {
+  margin-left: 0.5rem;
+}
+.m-sportBets .m-t-mt18 {
+  margin-top: 1.5rem;
+}
+.m-sportBets .m-t-mv3 {
+  margin: 0.16666667rem;
+}
+.m-sportBets .m-t-mv5 {
+  margin: 0.41666667rem;
+}
+.m-sportBets .m-r-5 {
+  margin-right: 0.41666667rem;
+}
+.m-sportBets .m-r-20 {
+  margin-right: 1.66666667rem;
+}
+.m-sportBets .m-t-ml2 {
+  margin-left: 0.16666667rem;
+}
+.m-sportBets .m-b-5 {
+  margin-bottom: 0.41666667rem;
+}
+

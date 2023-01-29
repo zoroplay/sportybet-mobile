@@ -1117,7 +1117,7 @@ only screen and (min-width: 2560px) {
   font-size: 1.33333333rem;
 }
 
-.m-nav-secondary[data-v-045e5fcb] {
+.m-nav-secondary {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

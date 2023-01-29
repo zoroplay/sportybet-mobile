@@ -376,6 +376,16 @@ Vue.mixin({
 
     getMatchStatus(selection){
       // if(selection)
+    },
+    formatOdd(odd) {
+      if (odd > 0 && odd % 1 === 0) {
+        return odd + ".00";
+      } else {
+        return parseFloat(odd).toFixed(2);
+      }
+    },
+    goBack(){
+      return this.$router.go(-1);
     }
 
 

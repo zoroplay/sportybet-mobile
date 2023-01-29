@@ -63,10 +63,6 @@
             data-v-5ac3f8c7=""
             id="order-new-tabs-wrapper"
             class="tabs-wrapper"
-            data-offset="80"
-            data-new-z-index="1000"
-            data-cls="undefined"
-            data-disable-sticky="false"
           >
             <div data-v-5ac3f8c7="" class="m-l-left">
               <ul data-v-5ac3f8c7="" class="m-uc-nav m-order-select-nav">
@@ -108,7 +104,7 @@
           </div>
           <div
             data-v-5ac3f8c7=""
-            loading-data-op="load-more-loading-icon"
+            v-if="!loading"
             class="m-scroll list-wrapper"
             style="position: relative"
           >
@@ -123,10 +119,10 @@
                 ><span data-v-5ac3f8c7="" class="inner"></span
               ></span>
             </div>
-            <div data-v-5ac3f8c7="">
+            <div v-for="(group,index) in details" :key="index">
               <div data-v-5ac3f8c7="" class="wide"></div>
               <!-- <div data-v-5ac3f8c7="" class="year">2022</div> -->
-              <div v-for="(group,index) in details" :key="index" data-v-5ac3f8c7="" class="ticket-list">
+              <div class="ticket-list">
                 <div data-v-5ac3f8c7="" class="date">
                   <div data-v-5ac3f8c7="" class="day">{{ betlistformatDate(index,'D') }}</div>
                   <div
@@ -139,7 +135,7 @@
                   </div>
                 </div>
                 <div data-v-5ac3f8c7="" class="place"></div>
-                <div v-for="(list, k) in group" :key="k" data-v-5ac3f8c7="" data-op="history-row" class="list">
+                <div v-for="(list, k) in group" :key="k" data-v-5ac3f8c7="" @click="$router.push({name:'account-openbets-betdetail',params:{couponid:list.betslip_id}})" class="list">
                   <div data-v-5ac3f8c7="" class="bar" :class="list.status == 1 ? 'win': list.status == 2 ? 'lost' : 'pending'">
                     <span data-v-5ac3f8c7="" class="type"
                       ><span data-v-5ac3f8c7=""> {{ list.bet_type }} </span>
@@ -153,9 +149,6 @@
                       <i data-v-5ac3f8c7="" class="arrow"></i
                     ></span>
                   </div>
-
-                  <!---->
-                  <!---->
                   <div data-v-5ac3f8c7="" class="title">
                     <span data-v-5ac3f8c7="" data-op="history-stake-text">
                       Total Stake(NGN)
@@ -175,22 +168,22 @@
                       >{{ list.winnings }}</span
                     >
                   </div>
-                  <!---->
                   <ul v-for="(event, i) in list.selections.slice(0,2)" :key="i" data-v-5ac3f8c7="" class="teams">
                     <li data-v-5ac3f8c7="">{{ event.event }}</li>
-                    <!---->
-                  </ul>
 
+                  </ul>
                   <ul v-if="list.selections.length > 3" data-v-5ac3f8c7="" class="teams">
                     <li data-v-5ac3f8c7="">...(and {{ list.selections.slice(3,-1).length }} other matches)</li>
                   </ul>
-
-                  <!---->
                   <div data-v-5ac3f8c7="" class="narrow"></div>
                 </div>
               </div>
             </div>
+            <div v-if="details.length > 1" data-v-5ac3f8c7="" class="m-list-none-wrap"><!----> <div class="m-list-none"><span class="no-list-txt">
+      No tickets available.
+    </span> <!----></div></div>
           </div>
+          <div v-else class="m-loading-wrap"><div class="m-loading dark"><div class="loading"></div> <!----></div></div>
         </div>
       </div>
       <!---->
@@ -215,7 +208,8 @@ export default {
   data(){
     return {
       bet_type: '',
-      details:[]
+      details:[],
+      loading: false
     }
   },
   methods:{
